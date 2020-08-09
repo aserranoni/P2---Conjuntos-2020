@@ -413,22 +413,47 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 
 \begin{proof}[Solução]
   
-  Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como um compacto contido num espaço topológico produto.
-  De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), munido do produto das topologias discretas, então o conjunto \(C\) dos ramos da árvore é identificado como
-  \(C=\{(x_\alpha)_{\alpha<\kappa}\in X : x_\beta<x_{\beta+1}\text{ pra todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
+  Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
+  compactos contidos num espaço topológico produto.
+  De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), munido do
+  produto  das topologias discretas, então o conjunto \(C\) dos ramos da árvore
+  é identificado como
+  \(C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
+    todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
   
-  Não é difícil ver que \(C\) é fechado, portanto como \(X\) é compacto pelo Teorema de Tychonoff, \(C\) é compacto.
-  Agora queremos construir \(F_\lambda\subset C\) fechados encaixantes, então teremos que \(\bigcap F_\lambda\neq\varnothing\), e assim \(x\in\bigcap F_\lambda\) será o ramo que desejamos.
+  Não é difícil ver que \(C\) é fechado, portanto como \(X\) é compacto pelo
+  Teorema de Tychonoff, \(C\) é compacto. Agora, queremos construir
+  \(F_\lambda\subset C\) fechados encaixantes, então teremos que
+  \(\bigcap F_\lambda\neq\varnothing\), e assim \(x\in\bigcap F_\lambda\) será o
+  ramo que desejamos.
   
-  Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in F_\alpha\}=\kappa\) (Como visto no exercício 3.2(iv)).
+  Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
+  para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in
+  F_\alpha\}=\kappa\) (Como visto n item (iv) do  Exercício 3.2).
   %falta definir ell(b)
-  Como todo nó possui somente finitos sucessores imediatos, temos que \(A_\lambda=(\bigcap_{\alpha<\lambda} F_\alpha)\cap T_\lambda\) é finito. Agora existe \(a_\lambda\in A_\lambda\) de modo que quando definimos \[F_\lambda\doteq\{(x_\beta)\in C : x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que \(\sup\{\ell(b): b\in F_\lambda\}=\kappa\), e não é difícil ver que \(F_\lambda\) é fechado.
-  Então temos que existe \(x\in\bigcap F_\lambda\), que será claramente o ramo de comprimento \(\kappa\).
+  Como todo nó possui somente finitos sucessores imediatos, temos que
+  \(A_\lambda=(\bigcap_{\alpha<\lambda} F_\alpha)\cap T_\lambda\) é finito.
+  Agora existe \(a_\lambda\in A_\lambda\) de modo que quando definimos
+  \[F_\lambda\doteq\{(x_\beta)\in C\,\colon
+    x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que
+  \(\sup\{\ell(b)\,\colon b\in F_\lambda\}=\kappa\), e não é difícil ver que 
+  \(F_\lambda\) é fechado. Então temos que existe \(x\in\bigcap F_\lambda\), que
+  será claramente o ramo de comprimento \(\kappa\).
   
   
   %comentário do ariel que precisamos revisar
-  %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
-  %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
+  %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in
+  %  T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove
+  %  que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \).
+  %Mostre que T tem exatamente m ramos de tamanho $\kappa$.
+  %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha}
+  %\mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto
+  %de um nível gera dois ramos. Mas a dica falha para maiores alturas, por
+  %exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo,
+  %se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel
+  %eta2,e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo
+  %que todos os niveis sejam finitos. Um contra-exemplo similar também funciona
+  %quando a altura $\kappa$ tem cofinalidade %\omega%.
   \end{proof}
 
   Os dois últimos resultados nos mostram que para uma árvore \((T,\leq)\) cuja altura é um
@@ -485,23 +510,47 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
     \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o
     menor elemento de \(A\).
     
-    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\), vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e \(X\) qualquer, então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em \(\omega\): \(F\) é função pois se \(\langle x,p\rangle,\langle x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade, \(f_p>f_q\). Assim \(\rest{(f_p)}{o(f_q)}=f_q\) então \(p=q\). Analogamente \(F\) é injetora. Absurdo.
+    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\),
+    vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo
+    \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e
+    \(X\) qualquer,  então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não
+    possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com
+    \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é
+    função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em
+    \(\omega\):  \(F\) é função pois se \(\langle x,p\rangle,\langle
+    x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in
+    f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade,
+    \(f_p>f_q\). Assim \(\rest{(f_p)}{o(f_q)}=f_q\) então \(p=q\). Analogamente
+    \(F\) é injetora. Absurdo.
     
     
-    Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda, T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor, \(\lambda=\alpha+1,\) para algum \(\alpha\), definimos
+    Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda,
+    T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor,
+    \(\lambda=\alpha+1\), para algum \(\alpha\), definimos
     \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
     T_\alpha \text{ e } a\in \omega -\ran g\}\]
     
     Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
     \begin{enumerate}[(i)]
-      \item \(T_{\alpha+1}\subseteq\omega^{\alpha+1}\) por construção, e \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
-      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha,a\rangle\}\) para alguma \(g\in
-    T_\alpha \text{ e } a\in \omega -\ran g\). Sabemos que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\) para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
-      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha,a\rangle\}\) para alguma \(g\in
-    T_\alpha \text{ e } a\in \omega -\ran g\). Se \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\) pois \(\beta\leq\alpha\)
+    \item \(T_{\alpha+1}\subseteq\omega^{\alpha+1}\) por construção, e
+      \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
+      \item Seja \(f\in T_{\alpha+1}\), então temos
+        \(f=g\cup\{\langle\alpha,a\rangle\}\) 
+        para alguma \(g\in T_\alpha \text{ e } a\in \omega -\ran g\). Sabemos
+        que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\)
+        para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
+      \item Seja \(f\in T_{\alpha+1}\), então temos
+        \(f=g\cup\{\langle\alpha,a\rangle\}\) para
+        alguma \(g\in T_\alpha \text{ e } a\in \omega -\ran g\). Se
+        \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\)
+        pois \(\beta\leq\alpha\)
       \item Para qualquer \(\beta < \alpha+1\), qualquer \(g \in T_{\beta}\), e
     qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
-    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\). Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito). Então teremos que \(f\cup\{\langle\alpha,a\rangle\}\in T_{\alpha+1}\) é a função que desejamos
+    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
+    Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que isto
+    é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito).
+    Então teremos  que \(f\cup\{\langle\alpha,a\rangle\}\in T_{\alpha+1}\) é a
+    funçãoque  desejamos
     \end{enumerate}
       
    Agora, vamos contruir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
@@ -519,22 +568,33 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
    \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que é possível
    por (iv).
    
-   Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon
-   \lambda\to \omega\) e  \(f\) é injetora pois, como visto anteriormente, união de funções injetoras encadeadas também é função injetora. Além disso, temos que \(\ran f \cap (\bigcup_{n = 0}^{\infty} X_n)
-   = \varnothing\) pois se \(X\in X_k\) e \(y\in X_k\cap\ran f_n,\) então seja \(m=\max\{k,n\}\), e temos que \(y\in X_m\cap\ran f_m=\varnothing\) (\(f_n\) e \(X_n\) estão encadeados). Portanto \(\omega\setminus\ran f\) é infinito e \(\ran f \cap X =
-   \varnothing\). Assim concluímos que \(f\) satisfaz (ii). Ademais, se  \(\beta <
-   \lambda\), tome \(n\) tal que \(\beta < \lambda_n\), e teremos \(\rest{f} {\beta}= \rest{(f_{n})}{\beta}\in T_\beta\) e portanto (iii) também é satisfeito (Perceba que \(f_n\in T_{\lambda_n}\) e \(\lambda_n<\lambda\)).
+   Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon \lambda\to
+   \omega\) e  \(f\)  é injetora pois, como visto anteriormente, união de
+   funções injetoras  encadeadas também é função injetora. Além disso, temos que
+   \(\ran f \cap (\bigcup_{n = 0}^{\infty} X_n)= \varnothing\) pois se \(X\in
+   X_k\) e  \(y\in X_k\cap\ran f_n,\) então seja \(m=\max\{k,n\}\), e temos que
+   \(y\in X_m\cap\ran f_m=\varnothing\) (\(f_n\) e \(X_n\) estão encadeados).
+   Portanto  \(\omega\setminus\ran f\) é infinito e \(\ran f \cap X
+   =\varnothing\). Assim concluímos que \(f\) satisfaz (ii). Ademais, se  \(\beta <
+   \lambda\), tome \(n\) tal que \(\beta < \lambda_n\), e teremos
+   \(\rest{f} {\beta}= \rest{(f_{n})}{\beta}\in T_\beta\) e portanto (iii)
+   também é satisfeito (Perceba que \(f_n\in T_{\lambda_n}\) e \(\lambda_n<\lambda\)).
    
-   Definimos \(T_\lambda\doteq\big\{f(g,X) : g\in\bigcup_{\beta < \lambda} T_{\beta}\text{ e cada } X \subseteq \omega\setminus\ran g\big\}\). Portanto (4) também é satisfeito por construção. Falta verificar (i). Com efeito, \(\card{T_\lambda}\leq\card{\bigcup_{\beta<\lambda}T_{\beta}}\card{\mathcal P^f(\omega)} \le \card{\omega}\sum_{\beta<\lambda}|T_{\beta}| \le \aleph_0^2=\aleph_0\), onde \(\mathcal P^f\) indica o conjunto das partes finitas.
+   Definimos \(T_\lambda\coloneqq\big\{f(g,X)\,\colon g\in\bigcup_{\beta <
+     \lambda} T_{\beta} \text{ e cada } X \subseteq \omega\setminus\ran
+   g\big\}\). Portanto  (iv) também é satisfeito por construção. Falta verificar
+   (i). Com efeito,
+   \(\card{T_\lambda}\leq\card{\bigcup_{\beta<\lambda}T_{\beta}}\card{\mathcal
+     P^f(\omega)} \le \card{\omega}\sum_{\beta<\lambda}\card{T_{\beta}}
+   \le \aleph_0^2=\aleph_0\), onde \(\mathcal P^f\) indica o conjunto das partes finitas.
    
    Temos assim \(T\) árvore de Aronszajn de altura \(\omega_1\).
-
 \end{proof}
 
  A questão da existência de árvores de Aronszajn é muito complicada e ainda não
  foi totalmente resolvida. De modo geral, dizemos que cardinais \(\kappa\)
  não-contáveis para os quais vale um  análogo do Lema de Kőnig, i.e., não
- existem árvores  de Aronszajn de altura $\kappa$; dizemos que tais cardinais
+ existem árvores  de Aronszajn de altura \(\kappa\); dizemos que tais cardinais
  possuem a  \textit{propriedade de árvore}. O exercício a seguir nos mostra que
  cardinais singulares não satisfazem tal requisito.
 
@@ -543,14 +603,43 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
   para um cardinal singular \(\kappa\) qualquer.
 \end{exercicio}
 \begin{proof}[Solução]
- Primeiramente daremos a ideia da demonstração: Fixado \(\kappa\), queremos encontrar uma árvore de altura \(\kappa\), cujos ramos têm comprimento estritamento menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de }T\}=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular, então existe \(\{\alpha_\eta:\eta<\lambda\}\) onde \(\lambda<\kappa\) com \(\sup\{\alpha_\eta\}=\kappa\). Assim basta construir uma árvore formada por ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura \(\alpha_\eta\) para todo \(\eta<\lambda\). Agora construiremos tal árvore.
+ Primeiramente daremos a ideia da demonstração: Fixado \(\kappa\), queremos
+ encontrar uma árvore de altura \(\kappa\), cujos ramos têm comprimento
+ estritamente  menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de
+ }T\}=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular,
+ então existe \(\{\alpha_\eta\,\colon\eta<\lambda\}\) onde \(\lambda<\kappa\)
+ com \(\sup\{\alpha_\eta\}=\kappa\). Assim basta construir uma árvore formada
+ por  ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura
+ \(\alpha_\eta\)  para todo \(\eta<\lambda\). Agora construiremos tal árvore.
  
- Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe \(\{\alpha_\eta, \eta<\lambda\}\) subconjunto cofinal de \(\kappa\). Vamos considerar o seguinte conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\text{ | }\beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
- Observe que \(T\) é ordenado pela ordem usual de funções e que para \(\varnothing\neq f,g\in T, f\leq g\iff f(0)=g(0), \dom f\subseteq\dom g\). Vamos provar que \(T\) é uma árvore:  \(\{\varnothing\}\) é o menor elemento de \(T\). Seja \(A_x=\{y\in T: y<x\}\) e observe que \(A_x\) possui o mesmo tipo de ordem de \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
+ Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe
+ \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
+ Vamos considerar o seguinte
+ conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\,\colon
+   \beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
+ Observe que \(T\) é ordenado pela ordem usual de funções e que para
+ \(\varnothing\neq f,g\in T, f\leq g\iff f(0)=g(0), \dom f\subseteq\dom g\).
+ Vamos provar que \(T\) é uma árvore:  \(\{\varnothing\}\) é o menor elemento de
+ \(T\). Seja \(A_x=\{y\in T\,\colon y<x\}\) e observe que \(A_x\) possui o mesmo
+ tipo de ordem de  \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
  
- Seus ramos são da forma \(b_\eta=\{f\in T: f(0)=\eta\}\) para algum \(\eta<\lambda\): Se \(b_\eta=\{f\in T: f(0)=\eta\}\) para algum \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e sem perda de generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). \(b_\eta\) é maximal pois suponhamos \(b_\eta\subsetneq c\) com \(c\) cadeia, então existe \(f\in c\) com \(f(0)\neq\eta\), logo \(f\) não é comparável com qualquer elemento de \(b_\eta\). Agora se \(b\) é ramo qualquer de \(T\), vamos provar que \(b\subset b_\xi\) para algum \(\xi<\eta\): De fato tome \(f\in b\) e \(\xi\doteq \eta_f=f(0)\), então se \(g\in b\), ou \(g\leq f\) ou \(g\geq f\) pois \(b\) é uma cadeia. De toda forma, \(g(0)=f(0)=\xi\implies g\in b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\) então \(b=b_\xi\) pois \(b_\xi\) é ramo (maximal). 
+ Seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
+ \(\eta<\lambda\): Se \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
+ \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e sem perda de
+ generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). \(b_\eta\) é
+ maximal pois suponhamos \(b_\eta\subsetneq c\) com \(c\) cadeia, então existe
+ \(f\in c\) com \(f(0)\neq\eta\), logo \(f\) não é comparável com qualquer
+ elemento de \(b_\eta\). Agora se \(b\) é ramo qualquer de \(T\), vamos provar
+ que \(b\subset b_\xi\) para algum \(\xi<\eta\): De fato tome \(f\in b\) e
+ \(\xi\doteq \eta_f=f(0)\), então se \(g\in b\), ou \(g\leq f\) ou \(g\geq f\)
+ pois  \(b\) é uma cadeia. De toda forma, \(g(0)=f(0)=\xi\) implica que \( g\in
+ b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\) então \(b=b_\xi\) pois
+ \(b_\xi\) é ramo (maximal). 
  
- Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T: f(0)=\eta\}\) tenha tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso \(h(T)=\sup\{\alpha_\eta:\eta<\lambda\}=\kappa\) e portanto \(T\) é árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
+ Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T: f(0)=\eta\}\) tenha
+ tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso
+ \(h(T)=\sup\{\alpha_\eta\,\colon\eta<\lambda\}=\kappa\) e portanto \(T\) é
+ árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
  
 \end{proof}
 
