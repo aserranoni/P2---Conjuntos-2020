@@ -213,14 +213,33 @@ as propriedades dadas no enunciado, então o conjunto
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
 
-        \item
-Vamos começar mostrando que \(|b \cap T_\alpha| = 1\) ou \(0\), \(\forall \alpha\). De fato, suponhamos por absurdo que \(|b \cap T_\alpha| \geq 2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha, x \neq y\). Como \(b\) é ordenado, podemos assumir \(x < y\). Mas então \(\{t \in T: t < x\} \subsetneq \{t \in T: t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), impossível. Logo \(|b \cap T_\alpha| = 1\) ou \(0\), \(\forall \alpha\).
-\par 
-Seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(|b \cap T_\alpha| = 1\). Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo exercício \(3.2.ii\), segue que \(\{t \in T: t < u\} \subset b\), donde \(h(u) \leq \ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq \ell(b)\), impossível. Assim, como \(|b \cap T_\alpha| = 1\) ou \(0\) e \(|b \cap T_\alpha| \neq 1\), devemos ter \(|b \cap T_\alpha| = 0\).
-\par 
-O caso \(\alpha<l(b)\) faremos por indução. Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e \(|b \cap T_\beta| = 1\), para \(\beta < \alpha\). \\
+ 
+        \item Vamos começar mostrando que \(\card{b \cap T_\alpha} \leq 1\), para cada
+\(\alpha\) ordinal. De fato, suponhamos por absurdo que \(\card{b \cap T_\alpha} \geq
+2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha\) tais que \(x \neq
+y\). Como \(b\) é uma cadeia, temos que \(x<y\) ou \(y<x\). Assumindo sem perda
+de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
+\{t \in T\,\colon t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
+
+Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 1\).
+Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
+3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
+\ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
+Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
+=1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
+O caso \(\alpha<l(b)\) faremos por indução. Claramente quando \(\alpha = 0\) é
+verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
+\(\beta < \alpha\).
+
 \textbf{Caso \(\alpha\) é ordinal sucessor:}
-Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\). Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T:t \leq y\} \subset b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo exercício 3.1.v, existe um único \(z \in T\) tal que \(y < z \leq x\) e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z \in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\). Segue que \(|b \cap T_\alpha| = 1\).\\
+Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\). Tome
+\(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\} \subset
+b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo
+item (iv) do Exercício 3.1, existe um único \(z \in T\) tal que \(y < z \leq x\)
+e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
+\in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b
+\cap T_\alpha\). Segue que \(\card{b \cap T_\alpha = 1}\).\\
+
 \textcolor{red}{Falta o quando \(\alpha\) é ordinal limite.}
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
@@ -551,8 +570,8 @@ Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\). Tome \(y \i
    um conjunto \(X \subseteq \omega - \ran g\) finito. Vamos construir uma
    função \(f = f(g, X)\) da seguinte maneira: fixe uma sequência
    crescente \(\langle \lambda_n \rangle_{n=0}^{\infty}\) tal que \(\lambda_0  =\beta\)
-   e \(sup\{\lambda_n\,\colon n \in \mathbb{N}\} = \lambda\). Seja
-   \(f_0 = g \in T_{\lambda_0}\) e \(X_0 = X \subseteq \omega - ranf_0\). Tendo
+   e \(\sup\{\lambda_n\,\colon n \in \mathbb{N}\} = \lambda\). Seja
+   \(f_0 = g \in T_{\lambda_0}\) e \(X_0 = X \subseteq \omega - \ran f_0\). Tendo
    definido \(f_n \in T_{\lambda_n}\) e \(X_n\subseteq \omega - \ran f_n\)
    finito, nós primeiro tomamos um conjunto \(X_{n+1} \supsetneq X_n\) finito tal
    que \(X_{n+1} \subseteq \omega - \ran f_n\) (Note que por (ii) este último passo é
@@ -601,7 +620,7 @@ Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\). Tome \(y \i
  estritamente  menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de
  }T\}=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular,
  então existe \(\{\alpha_\eta\,\colon\eta<\lambda\}\) onde \(\lambda<\kappa\)
- com \(\sup\{\alpha_\eta\}=\kappa\). Assim basta construir uma árvore formada
+ com \mbox{\(\sup\{\alpha_\eta\}=\kappa\)}. Assim basta construir uma árvore formada
  por  ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura
  \(\alpha_\eta\)  para todo \(\eta<\lambda\). Agora construiremos tal árvore.
  
@@ -609,27 +628,30 @@ Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\). Tome \(y \i
  \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
  Vamos considerar o seguinte
  conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\,\colon
-   \beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
+   \beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e
+   }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
  Observe que \(T\) é ordenado pela ordem usual de funções e que para
- \(\varnothing\neq f,g\in T, f\leq g\iff f(0)=g(0), \dom f\subseteq\dom g\).
+ \(\varnothing\neq f,g\in T, f\leq g\) se, e somente se  \(f(0)=g(0)\) e
+ \(\dom f\subseteq\dom g\).
  Vamos provar que \(T\) é uma árvore:  \(\{\varnothing\}\) é o menor elemento de
- \(T\). Seja \(A_x=\{y\in T\,\colon y<x\}\) e observe que \(A_x\) possui o mesmo
+ \(T\). Seja \mbox{\(A_x=\{y\in T\,\colon y<x\}\)} e observe que \(A_x\) possui o mesmo
  tipo de ordem de  \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
  
  Seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
  \(\eta<\lambda\): Se \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
  \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e sem perda de
- generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). \(b_\eta\) é
- maximal pois suponhamos \(b_\eta\subsetneq c\) com \(c\) cadeia, então existe
- \(f\in c\) com \(f(0)\neq\eta\), logo \(f\) não é comparável com qualquer
+ generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). Além disso,
+ note que \(b_\eta\) é
+ maximal pois supondo \(b_\eta\subsetneq c\) com \(c\) cadeia, então segue que existe
+ \(f\in c\) com \(f(0)\neq\eta\). Logo, \(f\) não é comparável com qualquer
  elemento de \(b_\eta\). Agora se \(b\) é ramo qualquer de \(T\), vamos provar
  que \(b\subset b_\xi\) para algum \(\xi<\eta\): De fato tome \(f\in b\) e
  \(\xi\doteq \eta_f=f(0)\), então se \(g\in b\), ou \(g\leq f\) ou \(g\geq f\)
  pois  \(b\) é uma cadeia. De toda forma, \(g(0)=f(0)=\xi\) implica que \( g\in
- b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\) então \(b=b_\xi\) pois
+ b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\), obtemos que \(b=b_\xi\) pois
  \(b_\xi\) é ramo (maximal). 
  
- Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T: f(0)=\eta\}\) tenha
+ Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) tenha
  tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso
  \(h(T)=\sup\{\alpha_\eta\,\colon\eta<\lambda\}=\kappa\) e portanto \(T\) é
  árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
