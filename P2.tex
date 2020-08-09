@@ -227,20 +227,28 @@ Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 \ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
-O caso \(\alpha<l(b)\) faremos por indução. Claramente quando \(\alpha = 0\) é
-verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
-\(\beta < \alpha\).
 
-\textbf{Caso \(\alpha\) é ordinal sucessor:}
-Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\). Tome
-\(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\} \subset
-b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo
-item (iv) do Exercício 3.1, existe um único \(z \in T\) tal que \(y < z \leq x\)
-e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
-\in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b
-\cap T_\alpha\). Segue que \(\card{b \cap T_\alpha = 1}\).\\
+Para o caso em que \(\alpha<\ell(b)\), suponha por absurdo que existe
+\(\alpha_0<\ell(b)\) tal que \(\card{T_{\alpha_0}\cap b}=0\). Como \(b\) é uma
+cadeia, temos pelo Lema de Zorn que \(b\) possui um elemento maximal \(x\).
+Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
+\(\{y\in T\,\colon y < x\}\) é isomorfo a \(b\). Sendo assim, se
+\(b\cap T_{\alpha_0}=\varnothing\) então
+\(\{y\in T\,\colon y<x\}\cap T_{\alpha_0}=\varnothing\). Absurdo.
 
-\textcolor{red}{Falta o quando \(\alpha\) é ordinal limite.}
+% O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
+% verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
+% \(\beta < \alpha\).
+% \textbf{Caso \(\alpha\) é ordinal sucessor:}
+% Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\). Tome
+% \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\} \subset
+% b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo
+% item (iv) do Exercício 3.1, existe um único \(z \in T\) tal que \(y < z \leq x\)
+% e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
+% \in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b
+% \cap T_\alpha\). Segue que \(\card{b \cap T_\alpha = 1}\).\\
+
+% \textcolor{red}{Falta o quando \(\alpha\) é ordinal limite.}
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
@@ -369,8 +377,8 @@ e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
   \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
   árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
   imediatos,  então \(T\) tem um ramo infinito. De fato, vamos utilizar recursão
-  para  construir uma sequência \(\langle c_n\rangle_{n=0}^{\omega}\)  de nós de \(T\) tal que,
-  para todo \(n<\omega\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
+  para  construir uma sequência \(\langle c_n\rangle_{n=0}^{\omega}\)  de nós de
+  \(T\) tal que, para todo \(n<\omega\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
   infinito.
 
   Seja \(c_0\) a raiz de T e  note que \(\{a \in T\,\colon c_{0} \leq a \}= T\)
@@ -417,13 +425,8 @@ e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
   $\kappa$. Prove que se todos os níveis de \(T\) são finitos, então \(T\)
   possui um ramo de tamanho $\kappa$.
 \end{exercicio}
-\textcolor{red}{Ariel S.: Não manjo de topologia então não tenho condições de
-  verificar a prova a seguir propriamente. De toda forma, me parece que a ideia
-  seria repetir a prova do Lema de König usando recursão transfinita.
-  Alguém manja?}
-\textcolor{green}{Ariel S.:OLHAR LINK: https://math.stackexchange.com/q/464694/253958 }
 
-\begin{proof}[Solução]
+\begin{proof}[Uma ideia usando conceitos de topologia]
   
   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
   compactos contidos num espaço topológico produto.
@@ -506,7 +509,7 @@ e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
     Em primeiro lugar, observe que uma vez demonstrada a existência de uma tal
     família se \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), mostraremos que \(T\) é
     a árvore  de Aronszajn que desejamos. De fato, \((T,<)\) é um conjunto
-    ordenado de acordo a contenção de funções usual.
+    ordenado de acordo com a contenção de funções usual.
     
     Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então
     \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset
