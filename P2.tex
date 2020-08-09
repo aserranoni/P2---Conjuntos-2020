@@ -224,36 +224,40 @@ de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
 Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 1\).
 Logo existe \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
-\ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
+\ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq \ell(b)\), impossível.
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
 
-Para o caso \(\alpha<l(b)\) faremos por indução\footnote{Para formalizar melhor, aqui nos faltou alguma
+Para o caso \(\alpha<\ell(b)\) faremos por indução\footnote{Para formalizar
+  melhor, aqui nos faltou alguma
 técnica que nos possibilitasse usar recurssão quando \(\alpha\) é ordinal limite.
-Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem esse problema}.
-Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e \(|b \cap T_\beta| = 1\), para
+Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem
+esse problema}.
+Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e
+\(\card{b \cap T_\beta} = 1\), para
 \(\beta < \alpha\).
 \par 
 \textit{Caso 1}
 Quando \(\alpha\) é limite.
-Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem encaixados, $\ell(b) = \sup_{y \in b}
-h(y)$, donde existe $y \in b$ com $\alpha < h(y)$.
-Mas $\succc{y} \subset b$. Como vale a identidade $b = \bigcup_{y \in b} \succc{y}$ e esses conjuntos são
-encaixados e cada um é bem ordenado, segue que que os antecessores de $y$ com nível $h(y) > \alpha$ tem
-intersecção não vazia com $T_\alpha$. 
+Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem
+encaixados,\(\ell(b) = \sup_{y \in b}h(y)\), donde existe \(y \in b\) com \(\alpha < h(y)\).
+Mas \(\succc{y} \subset b\). Como vale a identidade \(b = \bigcup_{y \in b}
+\succc{y}\) e esses conjuntos são
+encaixados e cada um é bem ordenado, segue que que os antecessores de \(y\) com
+nível \(h(y) > \alpha\) tem intersecção não vazia com \(T_\alpha\). 
 \par 
 \textit{Caso 2}
-Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\).
-Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T:t \leq y\} \subset b\). Mas \(\ell(b) > \alpha >
-\gamma\), donde existe \(x \in b, x > y\).
-Pelo exercício 3.1.v, existe um único \(z \in T\) tal que \(y < z \leq x\) e \(z\) é sucessor imediato de
-\(y\).
+Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\).
+Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\}
+\subset b\). Mas \(\ell(b) > \alpha >\gamma\), donde existe \(x \in b, x > y\).
+Pelo item (v) do  Exercício 3.1, existe um único \(z \in T\) tal que \(y < z
+\leq x\) e \(z\) é sucessor imediato de \(y\).
 Como \(b\) é maximal, segue que \(z \in b\).
 Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
-Segue que \(|b \cap T_\alpha| = 1\).
+Segue que \(\card{b \cap T_\alpha} = 1\).
 
-Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\).
-Logo não pode valer que \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) donde \(h(T)\geq\ell(b)\).
+Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer que
+\(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) donde \(h(T)\geq\ell(b)\).
 
 % O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
 % verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
@@ -414,11 +418,13 @@ Logo não pode valer que \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) dond
   \[r\doteq\{a\in T\,\colon a\leq c_n \text{ para algum }
     n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
   é um ramo infinito de \(T^{(\omega)}=T\).
-  Com efeito, sejam \(x,y\in r\), então \(x\leq c_n\) e \(y\leq c_m\) para algum \(n,m\in\Naturals\).
-  Tomemos \(p=\max\{n,m\}\) e temos \(x,y\leq c_p\), portanto ou \(x\leq y\) ou \(y\leq x\) pois \(T^{(p)}\) é
-  uma árvore. \(r\) é maximal pois seja \(r\subsetneq C\) cadeia, assim se \(z\in C\setminus r\), \(z>c_n\)
-  para todo \(n\in\Naturals\).
-  Desse modo, \(h(z)\geq n\) para todo \(n\in\Naturals\) e temos \(h(z)\geq\omega=h(T)\), absurdo.
+  Com efeito, sejam \(x,y\in r\), então
+  \(x\leq c_n\) e \(y\leq c_m\) para algum \(n,m\in\Naturals\).
+  Tomemos \(p=\max\{n,m\}\) e temos \(x,y\leq c_p\), portanto ou \(x\leq y\) ou
+  \(y\leq x\) pois \(T^{(p)}\) é uma árvore. \(r\) é maximal pois seja
+  \(r\subsetneq C\) cadeia, assim se \(z\in C\setminus r\), \(z>c_n\) para todo \(n\in\Naturals\).
+  Desse modo, \(h(z)\geq n\) para todo \(n\in\Naturals\) e temos
+  \(h(z)\geq\omega=h(T)\), absurdo.
   \end{proof}
 
     Em especial, observe que usamos o Teorema da Recursão sem
@@ -440,75 +446,92 @@ Logo não pode valer que \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) dond
   possui um ramo de tamanho \(\kappa\).
   
   \emph{Dica: Seja \(U_\alpha=\{x\in T_\alpha\,\colon\card{\succc{x}}=\kappa\}\). Prove que
-  \(\{\card{U_\alpha},\alpha<\kappa\}\subset\Naturals\) é limitado. Seja M o seu máximo, mostre que \(T\)
-  possui exatamente M ramos de tamanho \(\kappa\)}.
+  \(\{\card{U_\alpha},\alpha<\kappa\}\subset\Naturals\) é limitado. Seja M o seu
+  máximo, mostre que \(T\) possui exatamente M ramos de tamanho \(\kappa\)}.
 \end{exercicio}
 \begin{proof}[Solução]
     Observamos que a dica não vale em geral: Seja
-      \(T\) a árvore cujos nós possuem somente 2 sucessores imeadiatos. \(h(T)=\omega\) e cada nível \(T_n\) é
-      tal que \(\card{T_n}=2^n\), então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\)
-      de modo que \(\card{U_n}=\card{T_n}=2^n\)
-  Iremos demonstrar por partes:
-  \begin{enumerate}
+    \(T\) a árvore cujos nós possuem somente 2 sucessores imeadiatos.
+    \(h(T)=\omega\) e cada nível \(T_n\) é   tal que \(\card{T_n}=2^n\),
+    então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\)
+      de modo que \(\card{U_n}=\card{T_n}=2^n\) iremos demonstrar por partes:
+  \begin{enumerate}[(i)]
       \item Para \(cf(\kappa)<\omega\)
       
-      Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)\Naturals\) sequência crescente cofinal,
-      podemos tomar \(\alpha_0=0\). Por indução, construímos \(c_n\in T{\alpha_n}\) crescente tal que
-      \(\card{\succc{c_n}}=\kappa\). Uma vez feito isso, definamos \(b=\{y\in T : y<c_n\text{ para algum
-      }n\in\Naturals\}=\bigcup_{i<n}c_i\). então b será ramo (não é difícil mostrar que b é maximal) e o
-      comprimento \(\ell(b)=\kappa\). Seja \(c_0\) a raiz de \(T\), então observemos que \(S_n\doteq\{y\in
-      T\,\colon y\geq c_n\}\cap T_{\alpha_{n+1}}\neq\varnothing\), pois pelo exercício anterior, se fosse
-      vazio, então \(\{y\in T : y\geq c_n\}\subset T^{(\alpha_{n+1})}\) e como todos os níveis são finitos e
-      \(\alpha_{n+1}<\kappa\) então \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ser pela definição de
-      \(c_n\).
-      Observamos que existe \(y\in S_n\) tal que \(\card{\succc{y}}=\kappa\) pois caso contrário
-      \(\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in T\,\colon\zeta>x\text{ para
-      algum }x\in S_n\}\), logo \(\card{\succc{c_n}}\neq\kappa\). Assim tome \(c_{n+1}\in S_n\) tal que
-      \(\card{\succc{c_{n+1}}}=\kappa\).
+      Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)_\Naturals\)
+      sequência crescente cofinal, podemos tomar \(\alpha_0=0\).
+      Por indução, construímos \(c_n\in T{\alpha_n}\) crescente tal que
+      \(\card{\succc{c_n}}=\kappa\). Uma vez feito isso, definamos
+      \(b=\{y\in T\,\colon y<c_n\text{ para algum
+      }n\in\Naturals\}=\bigcup_{i<n}c_i\). Então \(b\) será ramo
+      (não é difícil mostrar que b é maximal) e o  comprimento
+      \(\ell(b)=\kappa\). Seja \(c_0\) a raiz de \(T\), então observemos que \mbox{\(S_n\coloneqq\{y\in
+      T\,\colon y\geq c_n\}\cap T_{\alpha_{n+1}}\neq\varnothing\),}
+      pois pelo exercício anterior, se fosse vazio, então
+      \mbox{\(\{y\in T\,\colon c_n\leq y\}\subset T^{(\alpha_{n+1})}\)} e como todos os
+      níveis são finitos e \(\alpha_{n+1}<\kappa\) então
+      \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ser pela definição de
+      \(c_n\). Observamos que existe \(y\in S_n\) tal que
+      \(\card{\succc{y}}=\kappa\) pois caso contrário
+      \(\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in
+      T\,\colon x <\zeta\text{ para
+        algum }x\in S_n\}\) e portando\(\card{\succc{c_n}}\neq\kappa\).
+      Assim tome \(c_{n+1}\in S_n\) tal que \(\card{\succc{c_{n+1}}}=\kappa\).
 
-      \item Para \(cf(\kappa)>\omega\), mostraremos que o conjunto
+      \item Para \(\text{cf}(\kappa)>\omega\), mostraremos que o conjunto
       \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) é limitado em \(\Naturals\). Suponha que
-      \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) não é limitado, tome \(\alpha_n\) tal que \(\alpha_n\) é a
-      menor solução para \(\card{U_\alpha}\geq n\). Vejamos que \(\alpha_n\) é sequência cofinal em \(\kappa\)
+      \mbox{\(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\)} não é limitado, tome
+      \(\alpha_n\) tal que \(\alpha_n\) é a menor solução para
+      \(\card{U_\alpha}\geq n\). Vejamos que \(\alpha_n\) é sequência cofinal em \(\kappa\)
       pois para todo \(\lambda<\kappa\), \(U_\lambda\) é finito e para
       \(l=\card{U_\lambda},\alpha_{l+1}>\lambda\) por construção.
-      Estabelecida a dica, seja \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e \(\overline{\alpha}\) tal que
-      \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para todo \(\alpha>\overline{\alpha}\), existe \(
+      Estabelecida a dica, seja \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e
+      \(\overline{\alpha}\) tal que
+      \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para
+      todo \(\alpha>\overline{\alpha}\), existe \(
       f=f_{\overline{\alpha},\alpha}\colon U_{\overline{\alpha}}\rightarrow U_\alpha\) bijeção tal que
-      \(f(x)\geq x,\forall x\). Fixado \(x\in U_{\overline{\alpha}}\), observemos que analogamente ao que foi
-      feito anteriormente (\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\)), temos f
-      com as propriedades. Agora vamos mostrar \(f\) injetora. Supõe \(f(x)=f(y)=z\implies z\geq x, z\geq
-      y\implies x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma árvore. \(f\) é sobrejetora pois
-      \(\card{U_{\overline{\alpha}}}\geq\card{U_\alpha}\in\Naturals\). Por fim, para \(x\in
-      U_{\overline{\alpha}}\) defina \(b_x\doteq
-      \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}\).
-      Observe que \(b_x\) é ramo pois \(\overline{\alpha}<\beta<\gamma\implies
-      f_{\beta,\gamma}(f_{\overline{\alpha},\beta}(x))=f_{\overline{\alpha},\gamma}(x)\) pois ambos são
-      maiores que \(x\) e \(\card{U_{\overline{\alpha}}}=\card{U_\gamma}\) e \(T\) é uma árvore.
+      \(f(x)\geq x,\forall x\). Fixado \(x\in U_{\overline{\alpha}}\),
+      observemos que analogamente ao que foi
+      feito anteriormente
+      (\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\)), temos f
+      com as propriedades. Agora vamos mostrar \(f\) injetora. Supõe
+      \(f(x)=f(y)=z\implies z\geq x, z\geq
+      y\implies x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma
+      árvore. \(f\) é sobrejetora pois
+      \(\card{U_{\overline{\alpha}}}\geq\card{U_\alpha}\in\Naturals\).
+      Por fim, para \(x\in U_{\overline{\alpha}}\) defina \[b_x\coloneqq
+      \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}\].
+      Observe que \(b_x\) é ramo pois \(\overline{\alpha}<\beta<\gamma\) implica que
+      \(f_{\beta,\gamma}(f_{\overline{\alpha},\beta}(x))=f_{\overline{\alpha},\gamma}(x)\)
+      pois ambos são  maiores que \(x\) e
+      \(\card{U_{\overline{\alpha}}}=\card{U_\gamma}\) e  \(T\) é uma árvore.
       
-      Assim provamos e observe que \(\ell(b_x)=\kappa\). Assim demonstramos que existe um ramo com as
-      propriedades desejadas e na verdade existem \(M\) deles.
-      
-      
+      Assim provamos e observe que \(\ell(b_x)=\kappa\), nos permitindo
+      finalmente concluir que existe um ramo com as
+      propriedades desejadas e na verdade existem \(M\) deles.\qedhere
     \end{enumerate}
     \end{proof}
     
-    \begin{proof}[Uma ideia alternativa usando conceitos de topologia]\footnote{Esta solução foi uma tentativa
+    \begin{proof}[Uma ideia alternativa usando conceitos de topologia]
+      \footnote{Esta solução foi uma tentativa
     de usar o Teorema de Tychonoff
-    neste contexto porém esta ideia não está completa e não deve ser considerada como uma demonstração e
-    apenas um devaneio lúdico sobre uma possível aplicação deste resultado interessante de topologia.}
+    neste contexto porém esta ideia não está completa e
+    não deve ser considerada como uma demonstração e
+    apenas um devaneio lúdico sobre uma possível aplicação deste
+    resultado interessante de topologia.}
   
    Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
    compactos contidos num espaço topológico produto.
-   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), onde \(0\) é um elemento que não faz
-   parte do ambiente de \(T\), serve simplesmente para identificar a falta de nós sucessores, munido do
+   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\),
+   onde \(0\) é um elemento que não faz parte do ambiente de \(T\),
+   serve simplesmente para identificar a falta de nós sucessores, munido do
    produto  das topologias discretas, então o conjunto \(C\) dos ramos da árvore
    é identificado como
-   \(C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
-     todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
-  
-   Não é difícil ver que \(X\setminus C\) é aberto, pois seu complementar é formado pela união dos conjuntos
-   cujos elementos tem duas ``coordenadas'' seguidas em ordem decrescente.
+   \[C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
+     todo }\beta\},\] onde definimos \(0>x\text{ pra todo }x\in T\). Não é
+ difícil ver que \(X\setminus C\) é aberto, pois seu complementar é formado
+ pela união dos conjuntos  cujos elementos tem duas ``coordenadas'' seguidas em
+ ordem decrescente.
    Portanto como \(X\) é compacto pelo
    Teorema de Tychonoff, \(C\) é compacto. Agora, queremos construir
    \(F_\lambda\subset C\) fechados encaixantes, então teremos que
@@ -516,8 +539,8 @@ Logo não pode valer que \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) dond
    ramo que desejamos.
   
    Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
-   para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in
-   F_\alpha\}=\kappa\) (Como visto n item (iv) do  Exercício 3.2).
+   para \(\alpha<\lambda\), de maneira tal que \mbox{\(\sup\{\ell(b)\,\colon b\in
+   F_\alpha\}=\kappa\)} (Como visto n item (iv) do  Exercício 3.2).
    %falta definir ell(b)
    Como todo nó possui somente finitos sucessores imediatos, temos que
     existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
@@ -699,9 +722,9 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  tipo de ordem de  \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
  
  Afirmamos que seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
- \(\eta<\lambda\). Pois se \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
- \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e como \(\dom g,\dom f<\alpha_\eta\), sem
- perda de generalidade,
+ \(\eta<\lambda\). Pois se \mbox{\(b_\eta=\{f\in T\,\colon f(0)=\eta\}\)} para algum
+ \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e como
+ \(\dom g,\dom f<\alpha_\eta\), sem perda de generalidade,
  temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). Além disso,
  note que \(b_\eta\) é
  maximal pois supondo \(b_\eta\subsetneq c\) com \(c\) cadeia, então segue que existe
