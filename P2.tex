@@ -14,7 +14,7 @@ Ariel Campêlo Viana Morais - Número USP: 9302177}
 
 As notas de aula a seguir foram produzidas com base na Seção 3 do Capítulo 12 de
 \cite{jech}. A ideia do nosso trabalho é seguir fielmente o conteúdo abordado no
-livro, incluqsive mantendo a notação e numeração que são usados pelo autor.
+livro, inclusive mantendo a notação e numeração que são usados pelo autor.
 Além disso, vamos incluir observações, soluções para os exercícios, e justificar
 passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 
@@ -222,19 +222,38 @@ de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
 \{t \in T\,\colon t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
 
 Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 1\).
-Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
+Logo existe \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
 \ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
 
-Para o caso em que \(\alpha<\ell(b)\), suponha por absurdo que existe
-\(\alpha_0<\ell(b)\) tal que \(\card{T_{\alpha_0}\cap b}=0\). Como \(b\) é uma
-cadeia, temos pelo Lema de Zorn que \(b\) possui um elemento maximal \(x\).
-Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
-\(\{y\in T\,\colon y < x\}\) é isomorfo a \(b\). Sendo assim, se
-\(b\cap T_{\alpha_0}=\varnothing\) então
-\(\{y\in T\,\colon y<x\}\cap T_{\alpha_0}=\varnothing\). Absurdo.
+Para o caso \(\alpha<l(b)\) faremos por indução\footnote{Para formalizar melhor, aqui nos faltou alguma
+técnica que nos possibilitasse usar recurssão quando \(\alpha\) é ordinal limite.
+Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem esse problema}.
+Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e \(|b \cap T_\beta| = 1\), para
+\(\beta < \alpha\).
+\par 
+\textit{Caso 1}
+Quando \(\alpha\) é limite.
+Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem encaixados, $\ell(b) = \sup_{y \in b}
+h(y)$, donde existe $y \in b$ com $\alpha < h(y)$.
+Mas $\succc{y} \subset b$. Como vale a identidade $b = \bigcup_{y \in b} \succc{y}$ e esses conjuntos são
+encaixados e cada um é bem ordenado, segue que que os antecessores de $y$ com nível $h(y) > \alpha$ tem
+intersecção não vazia com $T_\alpha$. 
+\par 
+\textit{Caso 2}
+Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\).
+Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T:t \leq y\} \subset b\). Mas \(\ell(b) > \alpha >
+\gamma\), donde existe \(x \in b, x > y\).
+Pelo exercício 3.1.v, existe um único \(z \in T\) tal que \(y < z \leq x\) e \(z\) é sucessor imediato de
+\(y\).
+Como \(b\) é maximal, segue que \(z \in b\).
+Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
+Segue que \(|b \cap T_\alpha| = 1\).
+
+Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\).
+Logo não pode valer que \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) donde \(h(T)\geq\ell(b)\).
 
 % O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
 % verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
@@ -368,7 +387,7 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
   enumerável é suficientemente "esguia", então \(T\) possui um ramo cofinal.
 
   \begin{teo}[Lema de König]
-  Seja \((T,\leq)\) uma árvore de altura \(\omega\). Se todos os níveis de \(T\) finitos, então
+  Seja \((T,\leq)\) uma árvore de altura \(\omega\). Se todos os níveis de \(T\) são finitos, então
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
 \begin{proof}
@@ -377,7 +396,7 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
   \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
   árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
   imediatos,  então \(T\) tem um ramo infinito. De fato, vamos utilizar recursão
-  para  construir uma sequência \(\langle c_n\rangle_{n=0}^{\omega}\)  de nós de
+  para  construir uma sequência \(\langle c_n\rangle_{n=0}^{\infty}\)  de nós de
   \(T\) tal que, para todo \(n<\omega\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
   infinito.
 
@@ -390,22 +409,17 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
   \]
  Daí segue que existe \(b\in S_n\) tal que o conjunto \(\{a\in T\,\colon
  b\leq a\}\) é infinito, assim podemos utilizar o Axioma da Escolha para
- tomar \(c_{n+1}\) como tal \(b\). 
- Finalmente, observamos que para cada \(\alpha<\omega\), o conjunto
- \[\{a\in T\,\colon  a\leq c_n \text{ para algum }
-   n<\alpha\}=\bigcup_{n<\alpha}\{a\in T\,\colon a\leq c_n\}\] é
-  um ramo de \(T^{(\alpha)}\) com altura \(\alpha\). Daí,
-  segue por indução que \[\{a\in T\,\colon a\leq c_n \text{ para algum }
+ tomar \(c_{n+1}\) um tal \(b\). 
+ Finalmente, temos que
+  \[r\doteq\{a\in T\,\colon a\leq c_n \text{ para algum }
     n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
-  é um ramo de \(T^{(\omega)}=T\).
+  é um ramo infinito de \(T^{(\omega)}=T\).
+  Com efeito, sejam \(x,y\in r\), então \(x\leq c_n\) e \(y\leq c_m\) para algum \(n,m\in\Naturals\).
+  Tomemos \(p=\max\{n,m\}\) e temos \(x,y\leq c_p\), portanto ou \(x\leq y\) ou \(y\leq x\) pois \(T^{(p)}\) é
+  uma árvore. \(r\) é maximal pois seja \(r\subsetneq C\) cadeia, assim se \(z\in C\setminus r\), \(z>c_n\)
+  para todo \(n\in\Naturals\).
+  Desse modo, \(h(z)\geq n\) para todo \(n\in\Naturals\) e temos \(h(z)\geq\omega=h(T)\), absurdo.
   \end{proof}
-
-    Apesar da prova acima conter um pouco mais de detalhe em relação àquela
-    apresentada em \cite{jech}, não fizemos a prova em mais detalhe ainda para
-    não tirar o foco da sua ideia principal, que é construir a sequência
-    \(\langle c_n\rangle_{n=0}^\omega\)  `de baixo para cima', garantindo que
-    sempre temos mais `infinitos elementos' para serem adicionados e em seguida
-    utilizar a sequência resultante para construir um ramo `de cima para baixo'.
 
     Em especial, observe que usamos o Teorema da Recursão sem
     explicitamente especificar uma função \(g\) para
@@ -423,71 +437,95 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
 \begin{exercicio}
   Seja \(\kappa\) um cardinal infinito e seja \((T,\leq)\) uma árvore de altura
   \(\kappa\). Prove que se todos os níveis de \(T\) são finitos, então \(T\)
-  possui um ramo de tamanho \(kappa\).
+  possui um ramo de tamanho \(\kappa\).
   
-  \emph{Dica: Seja \(U_\alpha=\{x\in T_\alpha\,\colon\card{\succc{x}}=\kappa\}\). Prove que \(\{\card{U_\alpha},\alpha<\kappa\}\subset\Naturals\) é limitado. Seja M o seu máximo, mostre que \(T\) possui exatamente M ramos de tamanho \(\kappa\)}.
+  \emph{Dica: Seja \(U_\alpha=\{x\in T_\alpha\,\colon\card{\succc{x}}=\kappa\}\). Prove que
+  \(\{\card{U_\alpha},\alpha<\kappa\}\subset\Naturals\) é limitado. Seja M o seu máximo, mostre que \(T\)
+  possui exatamente M ramos de tamanho \(\kappa\)}.
 \end{exercicio}
 \begin{proof}[Solução]
     Observamos que a dica não vale em geral: Seja
-      \(T\) a árvore cujos nós possuem somente 2 sucessores imeadiatos. \(h(T)=\omega\) e cada nível \(T_n\) é tal que \(\card{T_n}=2^n\), então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\) de modo que \(\card{U_n}=\card{T_n}=2^n\)
+      \(T\) a árvore cujos nós possuem somente 2 sucessores imeadiatos. \(h(T)=\omega\) e cada nível \(T_n\) é
+      tal que \(\card{T_n}=2^n\), então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\)
+      de modo que \(\card{U_n}=\card{T_n}=2^n\)
   Iremos demonstrar por partes:
   \begin{enumerate}
       \item Para \(cf(\kappa)<\omega\)
       
-      Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)\Naturals\) sequência crescente cofinal, podemos tomar \(\alpha_0=0\). Por indução, construímos \(c_n\in T{\alpha_n}\) crescente tal que \(\card{\succc{c_n}}=\kappa\). Uma vez feito isso, definamos \(b=\{y\in T : y<c_n\text{ para algum }n\in\Naturals\}=\bigcup_{i<n}c_i\). então b será ramo (não é difícil mostrar que b é maximal) e o comprimento \(\ell(b)=\kappa\). Seja \(c_0\) a raiz de \(T\), então observemos que \(S_n\doteq\{y\in T\,\colon y\geq c_n\}\cap T_{\alpha_{n+1}}\neq\varnothing\), pois pelo exercício anterior, se fosse vazio, então \(\{y\in T : y\geq c_n\}\subset T^{(\alpha_{n+1})}\) e como todos os níveis são finitos e \(\alpha_{n+1}<\kappa\) então \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ser pela definição de \(c_n\).
-      Observamos que existe \(y\in S_n\) tal que \(\card{\succc{y}}=\kappa\) pois caso contrário \(\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in T\,\colon\zeta>x\text{ para algum }x\in S_n\}\), logo \(\card{\succc{c_n}}\neq\kappa\). Assim tome \(c_{n+1}\in S_n\) tal que \(\card{\succc{c_{n+1}}}=\kappa\).
+      Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)\Naturals\) sequência crescente cofinal,
+      podemos tomar \(\alpha_0=0\). Por indução, construímos \(c_n\in T{\alpha_n}\) crescente tal que
+      \(\card{\succc{c_n}}=\kappa\). Uma vez feito isso, definamos \(b=\{y\in T : y<c_n\text{ para algum
+      }n\in\Naturals\}=\bigcup_{i<n}c_i\). então b será ramo (não é difícil mostrar que b é maximal) e o
+      comprimento \(\ell(b)=\kappa\). Seja \(c_0\) a raiz de \(T\), então observemos que \(S_n\doteq\{y\in
+      T\,\colon y\geq c_n\}\cap T_{\alpha_{n+1}}\neq\varnothing\), pois pelo exercício anterior, se fosse
+      vazio, então \(\{y\in T : y\geq c_n\}\subset T^{(\alpha_{n+1})}\) e como todos os níveis são finitos e
+      \(\alpha_{n+1}<\kappa\) então \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ser pela definição de
+      \(c_n\).
+      Observamos que existe \(y\in S_n\) tal que \(\card{\succc{y}}=\kappa\) pois caso contrário
+      \(\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in T\,\colon\zeta>x\text{ para
+      algum }x\in S_n\}\), logo \(\card{\succc{c_n}}\neq\kappa\). Assim tome \(c_{n+1}\in S_n\) tal que
+      \(\card{\succc{c_{n+1}}}=\kappa\).
 
-      \item Para \(cf(\kappa)>\omega\), mostraremos que o conjunto \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) é limitado em \(\Naturals\). Suponha que \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) não é limitado, tome \(\alpha_n\) tal que \(\alpha_n\) é a menor solução para \(\card{U_\alpha}\geq n\). Vejamos que \(\alpha_n\) é sequência cofinal em \(\kappa\) pois para todo \(\lambda<\kappa\), \(U_\lambda\) é finito e para \(l=\card{U_\lambda},\alpha_{l+1}>\lambda\) por construção.
-      Estabelecida a dica, seja \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e \(\overline{\alpha}\) tal que \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para todo \(\alpha>\overline{\alpha}\), existe \( f=f_{\overline{\alpha},\alpha}\colon U_{\overline{\alpha}}\rightarrow U_\alpha\) bijeção tal que \(f(x)\geq x,\forall x\). Fixado \(x\in U_{\overline{\alpha}}\), observemos que analogamente ao que foi feito anteriormente (\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\)), temos f com as propriedades. Agora vamos mostrar \(f\) injetora. Supõe \(f(x)=f(y)=z\implies z\geq x, z\geq y\implies x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma árvore. \(f\) é sobrejetora pois \(\card{U_{\overline{\alpha}}}\geq\card{U_\alpha}\in\Naturals\). Por fim, para \(x\in U_{\overline{\alpha}}\) defina \(b_x\doteq \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}\). Observe que \(b_x\) é ramo pois \(\overline{\alpha}<\beta<\gamma\implies f_{\beta,\gamma}(f_{\overline{\alpha},\beta}(x))=f_{\overline{\alpha},\gamma}(x)\) pois ambos são maiores que \(x\) e \(\card{U_{\overline{\alpha}}}=\card{U_\gamma}\) e \(T\) é uma árvore.
+      \item Para \(cf(\kappa)>\omega\), mostraremos que o conjunto
+      \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) é limitado em \(\Naturals\). Suponha que
+      \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) não é limitado, tome \(\alpha_n\) tal que \(\alpha_n\) é a
+      menor solução para \(\card{U_\alpha}\geq n\). Vejamos que \(\alpha_n\) é sequência cofinal em \(\kappa\)
+      pois para todo \(\lambda<\kappa\), \(U_\lambda\) é finito e para
+      \(l=\card{U_\lambda},\alpha_{l+1}>\lambda\) por construção.
+      Estabelecida a dica, seja \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e \(\overline{\alpha}\) tal que
+      \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para todo \(\alpha>\overline{\alpha}\), existe \(
+      f=f_{\overline{\alpha},\alpha}\colon U_{\overline{\alpha}}\rightarrow U_\alpha\) bijeção tal que
+      \(f(x)\geq x,\forall x\). Fixado \(x\in U_{\overline{\alpha}}\), observemos que analogamente ao que foi
+      feito anteriormente (\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\)), temos f
+      com as propriedades. Agora vamos mostrar \(f\) injetora. Supõe \(f(x)=f(y)=z\implies z\geq x, z\geq
+      y\implies x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma árvore. \(f\) é sobrejetora pois
+      \(\card{U_{\overline{\alpha}}}\geq\card{U_\alpha}\in\Naturals\). Por fim, para \(x\in
+      U_{\overline{\alpha}}\) defina \(b_x\doteq
+      \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}\).
+      Observe que \(b_x\) é ramo pois \(\overline{\alpha}<\beta<\gamma\implies
+      f_{\beta,\gamma}(f_{\overline{\alpha},\beta}(x))=f_{\overline{\alpha},\gamma}(x)\) pois ambos são
+      maiores que \(x\) e \(\card{U_{\overline{\alpha}}}=\card{U_\gamma}\) e \(T\) é uma árvore.
       
-      Assim provamos e observe que \(\ell(b_x)=\kappa\). Assim demonstramos que existe um ramo com as propriedades desejadas e na verdade existem \(M\) deles.
+      Assim provamos e observe que \(\ell(b_x)=\kappa\). Assim demonstramos que existe um ramo com as
+      propriedades desejadas e na verdade existem \(M\) deles.
       
       
     \end{enumerate}
+    \end{proof}
     
-% \begin{proof}[Uma ideia usando conceitos de topologia]
+    \begin{proof}[Uma ideia alternativa usando conceitos de topologia]\footnote{Esta solução foi uma tentativa
+    de usar o Teorema de Tychonoff
+    neste contexto porém esta ideia não está completa e não deve ser considerada como uma demonstração e
+    apenas um devaneio lúdico sobre uma possível aplicação deste resultado interessante de topologia.}
   
-%   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
-%   compactos contidos num espaço topológico produto.
-%   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), munido do
-%   produto  das topologias discretas, então o conjunto \(C\) dos ramos da árvore
-%   é identificado como
-%   \(C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
-%     todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
+   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
+   compactos contidos num espaço topológico produto.
+   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), onde \(0\) é um elemento que não faz
+   parte do ambiente de \(T\), serve simplesmente para identificar a falta de nós sucessores, munido do
+   produto  das topologias discretas, então o conjunto \(C\) dos ramos da árvore
+   é identificado como
+   \(C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
+     todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
   
-%   Não é difícil ver que \(C\) é fechado, portanto como \(X\) é compacto pelo
-%   Teorema de Tychonoff, \(C\) é compacto. Agora, queremos construir
-%   \(F_\lambda\subset C\) fechados encaixantes, então teremos que
-%   \(\bigcap F_\lambda\neq\varnothing\), e assim \(x\in\bigcap F_\lambda\) será o
-%   ramo que desejamos.
+   Não é difícil ver que \(X\setminus C\) é aberto, pois seu complementar é formado pela união dos conjuntos
+   cujos elementos tem duas ``coordenadas'' seguidas em ordem decrescente.
+   Portanto como \(X\) é compacto pelo
+   Teorema de Tychonoff, \(C\) é compacto. Agora, queremos construir
+   \(F_\lambda\subset C\) fechados encaixantes, então teremos que
+   \(\bigcap F_\lambda\neq\varnothing\), e assim \(x\in\bigcap F_\lambda\) será o
+   ramo que desejamos.
   
-%   Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
-%   para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in
-%   F_\alpha\}=\kappa\) (Como visto n item (iv) do  Exercício 3.2).
-%   %falta definir ell(b)
-%   Como todo nó possui somente finitos sucessores imediatos, temos que
-%   \(A_\lambda=(\bigcap_{\alpha<\lambda} F_\alpha)\cap T_\lambda\) é finito.
-%   Agora existe \(a_\lambda\in A_\lambda\) de modo que quando definimos
-%   \[F_\lambda\doteq\{(x_\beta)\in C\,\colon
-%     x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que
-%   \(\sup\{\ell(b)\,\colon b\in F_\lambda\}=\kappa\), e não é difícil ver que 
-%   \(F_\lambda\) é fechado. Então temos que existe \(x\in\bigcap F_\lambda\), que
-%   será claramente o ramo de comprimento \(\kappa\).
-  
-  
-  %comentário do ariel que precisamos revisar
-  %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in
-  %  T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove
-  %  que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \).
-  %Mostre que T tem exatamente m ramos de tamanho $\kappa$.
-  %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha}
-  %\mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto
-  %de um nível gera dois ramos. Mas a dica falha para maiores alturas, por
-  %exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo,
-  %se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel
-  %eta2,e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo
-  %que todos os niveis sejam finitos. Um contra-exemplo similar também funciona
-  %quando a altura $\kappa$ tem cofinalidade %\omega%.
+   Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
+   para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in
+   F_\alpha\}=\kappa\) (Como visto n item (iv) do  Exercício 3.2).
+   %falta definir ell(b)
+   Como todo nó possui somente finitos sucessores imediatos, temos que
+    existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
+   \[F_\lambda\doteq\{(x_\beta)\in C\,\colon
+     x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que
+   \(\sup\{\ell(b)\,\colon b\in F_\lambda\}=\kappa\), e não é difícil ver que 
+   \(F_\lambda\) é fechado. Então temos que existe \(x\in\bigcap F_\lambda\), que
+   será claramente o ramo de comprimento \(\kappa\).
   \end{proof}
 
   Os dois últimos resultados nos mostram que para uma árvore \((T,\leq)\) cuja altura é um
@@ -510,7 +548,7 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
   contra-exemplo  para a indagação que propusemos acima.
   
     \begin{teo}
-  Existem árvores de Aronszajn de altura $\omega_1$.
+  Existem árvores de Aronszajn de altura \(\omega_1\).
     \end{teo}
 
 \begin{proof}
@@ -637,10 +675,11 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
   para um cardinal singular \(\kappa\) qualquer.
 \end{exercicio}
 \begin{proof}[Solução]
+Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  Primeiramente daremos a ideia da demonstração: Fixado \(\kappa\), queremos
- encontrar uma árvore de altura \(\kappa\), cujos ramos têm comprimento
+ encontrar uma árvore \(T\) de altura \(\kappa\), cujos ramos têm comprimento
  estritamente  menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de
- }T\}=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular,
+ }T\}=h(T)=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular,
  então existe \(\{\alpha_\eta\,\colon\eta<\lambda\}\) onde \(\lambda<\kappa\)
  com \mbox{\(\sup\{\alpha_\eta\}=\kappa\)}. Assim basta construir uma árvore formada
  por  ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura
@@ -649,9 +688,9 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
  Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe
  \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
  Vamos considerar o seguinte
- conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\,\colon
-   \beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e
-   }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
+ conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\text{ | }
+   \eta_f=f(0)<\lambda\text{ e
+   }\beta<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
  Observe que \(T\) é ordenado pela ordem usual de funções e que para
  \(\varnothing\neq f,g\in T, f\leq g\) se, e somente se  \(f(0)=g(0)\) e
  \(\dom f\subseteq\dom g\).
@@ -659,10 +698,11 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
  \(T\). Seja \mbox{\(A_x=\{y\in T\,\colon y<x\}\)} e observe que \(A_x\) possui o mesmo
  tipo de ordem de  \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
  
- Seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
- \(\eta<\lambda\): Se \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
- \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e sem perda de
- generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). Além disso,
+ Afirmamos que seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
+ \(\eta<\lambda\). Pois se \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
+ \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e como \(\dom g,\dom f<\alpha_\eta\), sem
+ perda de generalidade,
+ temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). Além disso,
  note que \(b_\eta\) é
  maximal pois supondo \(b_\eta\subsetneq c\) com \(c\) cadeia, então segue que existe
  \(f\in c\) com \(f(0)\neq\eta\). Logo, \(f\) não é comparável com qualquer
@@ -673,7 +713,7 @@ Para tal elemento,  temos que \(h(x)=\ell(b)\). Daí concluímos que o conjunto
  b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\), obtemos que \(b=b_\xi\) pois
  \(b_\xi\) é ramo (maximal). 
  
- Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) tenha
+ Observe que construímos \(T\) para que \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) tenha
  tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso
  \(h(T)=\sup\{\alpha_\eta\,\colon\eta<\lambda\}=\kappa\) e portanto \(T\) é
  árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
