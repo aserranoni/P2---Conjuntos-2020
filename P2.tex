@@ -65,13 +65,13 @@ de \(T^\prime\) é dado por \(T_\alpha^\prime= T_\alpha \cap T^\prime\).
 comprimento \(\alpha\); entretanto, se \(\alpha\) é um ordinal limite então
 \(T^{(\alpha)}\) pode ter outros ramos de comprimento \(\alpha\).
 
-Finalmente, um conjunto \(A\subseteq T\) é uma \emph{anticadeia} em \(T\) se
+Finalmente, um conjunto \(A\subseteq T\) é uma \emph{anti-cadeia} em \(T\) se
 quaisquer elementos de \(A\) são incomparáveis. Isto é, se \(x,y\in A\) são tais
 que \(x\not = y\), então \(x\not \leq y\) e \(y\not \leq x\).
 
 A respeito dos conceitos introduzidos acima, é importante observar que todo
 ramo ou subárvore de \(T\) contém a raiz. Também notamos que se \(x,y\in T\)
-são nós tais que \(y< x\), então \(h(y) <h(x)\). Além disso, a prórpia definição
+são nós tais que \(y< x\), então \(h(y) <h(x)\). Além disso, a própria definição
 de \(h(T)\) nos dá que \(T_\alpha\not=\varnothing\) para todo ordinal
 \(\alpha<h(T)\). A seguir, vamos resolver os
 exercícios sugeridos pelo autor neste ponto do texto em \cite{jech}. Tais problemas
@@ -127,7 +127,7 @@ definições que apresentamos:
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
     existe \(y\in T_\alpha\) tal que \(y < x\). Assumindo o contrário, teremos
-    que o ramo \(b\coloneqq\{y\in T^{(h(x))}\,\colon y<x\}\) não possui elemento em
+    que o ramo da subárvore \(b\coloneqq\{y\in T^{(h(x))}\,\colon y<x\}\) não possui elemento em
     \(T_\alpha\). Daí, segue que \[S(\alpha)=h(x)=\ell(b)\leq\alpha,\] que é um absurdo. 
     Assim, tome \(y\in T_\alpha\) tal que \(y<x\) qualquer. Se
     existe \(z\) tal que \(y<z<x\), então obtemos
@@ -429,7 +429,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
 
     Em especial, observe que usamos o Teorema da Recursão sem
     explicitamente especificar uma função \(g\) para
-    calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para consturir tal função precisamos
+    calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para construir tal função precisamos
     aplicar o Axioma da Escolha: se \(k\) é uma função escolha para
     \(\mathcal{P}(T)\) e \(S_c\) é o conjunto de todos os sucessores imediatos
     de \(c\), então definindo \(g(c,n) \coloneqq k\big ( \{b\in S_c\,\colon
@@ -451,12 +451,12 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
 \end{exercicio}
 \begin{proof}[Solução]
     Observamos que a dica não vale em geral: Seja
-    \(T\) a árvore cujos nós possuem somente 2 sucessores imeadiatos.
+    \(T\) a árvore cujos nós possuem somente 2 sucessores imediatos.
     \(h(T)=\omega\) e cada nível \(T_n\) é   tal que \(\card{T_n}=2^n\),
     então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\)
       de modo que \(\card{U_n}=\card{T_n}=2^n\) iremos demonstrar por partes:
   \begin{enumerate}[(i)]
-      \item Para \(cf(\kappa)<\omega\)
+      \item Para \(\text{cf}(\kappa)<\omega\)
       
       Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)_\Naturals\)
       sequência crescente cofinal, podemos tomar \(\alpha_0=0\).
@@ -648,7 +648,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     funçãoque  desejamos
     \end{enumerate}
       
-   Agora, vamos contruir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
+   Agora, vamos construir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
    limite. Considere um ordinal \(\beta< \lambda\), um nó \(g \in T_{\beta}\) e
    um conjunto \(X \subseteq \omega - \ran g\) finito. Vamos construir uma
    função \(f = f(g, X)\) da seguinte maneira: fixe uma sequência
