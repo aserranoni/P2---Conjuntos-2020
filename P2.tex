@@ -6,8 +6,7 @@ Pedro Felizatto - Número USP:9794531\\
 Pietro Mesquita Piccione - Número USP: 4630640\\
 Mateus Schmidt Mattos Lopes Pereira - Número USP: 10262892\\
 Luís Cardoso - Número USP: 4552403\\
-Ariel Campêlo Viana Morais - Número USP: 9302177
-Bento Pereira - Número USP: }
+Ariel Campêlo Viana Morais - Número USP: 9302177}
 \date{\today}
 \begin{document}
 \maketitle
@@ -297,16 +296,12 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
          de \(\{\ell(b)\,\colon b \text{ é um ramo de } T\}\). Isto é, vamos
          provar que se \(\alpha\geq  \ell (b)\)
         para todo ramo \(b\) de \(T\), então \(\alpha\geq h(T)\).
-
-        De fato, como \(\alpha\geq \ell (b)\) para todo ramo \(b\) de \(T\),
-         segue do item anterior que \(b\cap T_\alpha=\varnothing\)  para
-         todo \(b\)  ramo de \(T\).
-
-         Como para todo nó \(x\in T\) existe um ramo \(b_x\) tal que
-         \(x\in b_x\) e \(T_\alpha\cap b= \varnothing\) para todo ramo
-         \(b\subseteq T\), concluímos que \(T_\alpha=\varnothing\).
-         Este último fato implica que \(h(T)\leq \alpha\), pois \(h(T)\) é o
-         menor ordinal \(\beta\) que satisfaz \(T_\beta =\varnothing\).  
+        
+        De fato, se \(x\in T\), tome \(b_x\) um ramo de \(T\) tal que \(x\in b_x\) \red{pelo lema
+        de zorn né?}. Como \(\{\zeta\in T:\zeta<x\}\subsetneq b_x\), temos que \[h(x)<h(x)+1\leq
+        \ell(b_x)\leq\alpha\]
+        Assim, pleo exercício 3.1.(vi), \(h(T)\leq\alpha\).
+        
 
       \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
           distintos tal que \(x\) e \(y\) são comparáveis.
