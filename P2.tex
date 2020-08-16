@@ -40,8 +40,8 @@ Se \(x,y\in T\) são nós tais que  \(y<x\), dizemos que \(y\) é um
 
 Seja \(x\in T\) um nó.  A \emph{altura} \(h(x)\) de \(x\) é o único ordinal
 isomorfo ao conjunto bem ordenado \mbox{\(\{y\in T\,\colon
-y<x\}\),} composto por todos os antecessores de \(x\). Observe que o Teorema 3.1
-do Capítulo 6 garante que a altura está bem-definida como função em \(T\).
+y<x\}\),} composto por todos os antecessores de \(x\). Observe que como \(T\) é uma árvore,
+então \(\{y\in T\,\colon y<x\}\) é bem ordenado e a altura está bem-definida como função em \(T\).
 Além disso, se \(h(x)\) é um ordinal sucessor, dizemos que \(x\) é um
 \emph{nó sucessor}. Caso contrário \(x\) é denominado \emph{nó limite}.
 O \(\alpha\)-ésimo \emph{nível} de \(T\) é o conjunto
@@ -228,33 +228,49 @@ Logo existe \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
 
-Para o caso \(\alpha<\ell(b)\) faremos por indução\footnote{Para formalizar
-  melhor, aqui nos faltou alguma
-técnica que nos possibilitasse usar recurssão quando \(\alpha\) é ordinal limite.
-Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem
-esse problema}.
+Para o caso \(\alpha<\ell(b)\) faremos por indução%\footnote{Para formalizar
+%  melhor, aqui nos faltou alguma
+%técnica que nos possibilitasse usar recursão quando \(\alpha\) é ordinal limite.
+%Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem
+%esse problema}.
+
 Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e
-\(\card{b \cap T_\beta} = 1\), para
-\(\beta < \alpha\).
+\(\card{b \cap T_\beta} = 1\), para \(\beta < \alpha\).
+Definimos \(r(\beta)\in T_\beta\cap b\). Logo temos uma função \(r\colon\alpha\to T^{(\alpha)}\cap b\) que é bijetora
+pois se \(r(\beta)=r(\lambda)\doteq y\), temos que \(y\in T_\beta\cap T_\lambda\cap b\)
+\red{TERMINAR} Concluímos que \(r\) é injetora. 
+Vejamos a sobrejetividade: se \(x\in
+T_\alpha\cap b=\bigcup_{\beta<\alpha}T_\beta\cap b,\) logo existe \(\beta\) tal que \(x\in
+T_\beta\cap b\) e assim \(x=r(\beta)\).
+
+Evidentemente, para todo \(\lambda<\alpha,h(r(\lambda))=\lambda\). Desta forma, \(r\) é um
+isomorfismo. Como \(\alpha<\ell(b)\), então \(b\setminus (T^{(\alpha)}\cap b)\neq\varnothing\).
+Existe assim \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se \(\gamma>\alpha,\)
+então existe \(p\in \{\zeta\in T:\zeta<z\}\) tal que \(\{\zeta\in T:\zeta<p\}\) é isomorfo à
+\(\alpha\), observe que isso é possível pois \(\{\zeta\in T:\zeta<z\}\) e \(\alpha\) são bem
+ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além do mais, \(h(p)=\alpha\).
+Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que \(p\in b\) e \(h(p)=\alpha\).
+
+
 \par 
-\textit{Caso 1}
-Quando \(\alpha\) é limite.
-Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem
-encaixados,\(\ell(b) = \sup_{y \in b}h(y)\), donde existe \(y \in b\) com \(\alpha < h(y)\).
-Mas \(\succc{y} \subset b\). Como vale a identidade \(b = \bigcup_{y \in b}
-\succc{y}\) e esses conjuntos são
-encaixados e cada um é bem ordenado, segue que que os antecessores de \(y\) com
-nível \(h(y) > \alpha\) tem intersecção não vazia com \(T_\alpha\). 
-\par 
-\textit{Caso 2}
-Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\).
-Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\}
-\subset b\). Mas \(\ell(b) > \alpha >\gamma\), donde existe \(x \in b, x > y\).
-Pelo item (v) do  Exercício 3.1, existe um único \(z \in T\) tal que \(y < z
-\leq x\) e \(z\) é sucessor imediato de \(y\).
-Como \(b\) é maximal, segue que \(z \in b\).
-Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
-Segue que \(\card{b \cap T_\alpha} = 1\).
+%\textit{Caso 1}
+%Quando \(\alpha\) é limite.
+%Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem
+%encaixados,\(\ell(b) = \sup_{y \in b}h(y)\), donde existe \(y \in b\) com \(\alpha < h(y)\).
+%Mas \(\succc{y} \subset b\). Como vale a identidade \(b = \bigcup_{y \in b}
+%\succc{y}\) e esses conjuntos são
+%encaixados e cada um é bem ordenado, segue que que os antecessores de \(y\) com
+%nível \(h(y) > \alpha\) tem intersecção não vazia com \(T_\alpha\). 
+%\par 
+%\textit{Caso 2}
+%Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\).
+%Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\}
+%\subset b\). Mas \(\ell(b) > \alpha >\gamma\), donde existe \(x \in b, x > y\).
+%Pelo item (v) do  Exercício 3.1, existe um único \(z \in T\) tal que \(y < z
+%\leq x\) e \(z\) é sucessor imediato de \(y\).
+%Como \(b\) é maximal, segue que \(z \in b\).
+%Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
+%Segue que \(\card{b \cap T_\alpha} = 1\).
 
 Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer que
 \(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) donde \(h(T)\geq\ell(b)\).
@@ -370,7 +386,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     Em particular, as propriedades acima implicam que \((\Phi[T],\supseteq)\) é
     uma árvore isomorfa a \((T,\preceq)\). Por exemplo, se considerarmos
     a árvore \(S=\text{Seq}(\{0,1\})=\{0,1\}^{<\omega}\) ordenado por \(\subseteq\),
-    então o sistema \(\langle D_s \,\colon s\in S\rangle\) construído no Exemplo
+    então o sistema do conjunto de Cantor \(\langle D_s \,\colon s\in S\rangle\) construído no Exemplo
     3.18 do  Capítulo 10 é uma representação de \((S,\subseteq)\) por intervalos
     fechados na reta real.
     \end{enumerate}
@@ -579,10 +595,10 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
   \(\alpha<\omega_1\), o nível \(T_\alpha\). Queremos que cada nível satisfaça:
   \begin{enumerate}[(i)]
     \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
-    \item Se \(f \in T_{\alpha}\), então \(f\) é injetora e \(\omega - \ran f\) é infinito;
+    \item Se \(f \in T_{\alpha}\), então \(f\) é injetora e \(\omega\setminus \ran f\) é infinito;
     \item Se \(f \in T_{\alpha}\) e \(\beta < \alpha\) então \(\rest{f} {\beta} \in T_{\beta}\);
     \item Para qualquer \(\beta < \alpha\), qualquer \(g \in T_{\beta}\), e
-    qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
+    qualquer \(X \subseteq \omega\setminus \ran g\) finito, existe uma \(f \in
     T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
     \end{enumerate}
 
@@ -623,7 +639,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor,
     \(\lambda=\alpha+1\), para algum \(\alpha\), definimos
     \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
-    T_\alpha \text{ e } a\in \omega -\ran g\}\]
+    T_\alpha \text{ e } a\in \omega\setminus\ran g\}\]
     
     Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
     \begin{enumerate}[(i)]
@@ -631,16 +647,16 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
       \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
       \item Seja \(f\in T_{\alpha+1}\), então temos
         \(f=g\cup\{\langle\alpha,a\rangle\}\) 
-        para alguma \(g\in T_\alpha \text{ e } a\in \omega -\ran g\). Sabemos
+        para alguma \(g\in T_\alpha \text{ e } a\in \omega\setminus\ran g\). Sabemos
         que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\)
         para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
       \item Seja \(f\in T_{\alpha+1}\), então temos
         \(f=g\cup\{\langle\alpha,a\rangle\}\) para
-        alguma \(g\in T_\alpha \text{ e } a\in \omega -\ran g\). Se
+        alguma \(g\in T_\alpha \text{ e } a\in \omega\setminus\ran g\). Se
         \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\)
         pois \(\beta\leq\alpha\)
       \item Para qualquer \(\beta < \alpha+1\), qualquer \(g \in T_{\beta}\), e
-    qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
+    qualquer \(X \subseteq \omega\setminus \ran g\) finito, existe uma \(f \in
     T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
     Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que isto
     é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito).
@@ -650,15 +666,15 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
       
    Agora, vamos construir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
    limite. Considere um ordinal \(\beta< \lambda\), um nó \(g \in T_{\beta}\) e
-   um conjunto \(X \subseteq \omega - \ran g\) finito. Vamos construir uma
+   um conjunto \(X \subseteq \omega\setminus \ran g\) finito. Vamos construir uma
    função \(f = f(g, X)\) da seguinte maneira: fixe uma sequência
    crescente \(\langle \lambda_n \rangle_{n=0}^{\infty}\) tal que \(\lambda_0  =\beta\)
    e \(\sup\{\lambda_n\,\colon n \in \mathbb{N}\} = \lambda\). Seja
-   \(f_0 = g \in T_{\lambda_0}\) e \(X_0 = X \subseteq \omega - \ran f_0\). Tendo
-   definido \(f_n \in T_{\lambda_n}\) e \(X_n\subseteq \omega - \ran f_n\)
+   \(f_0 = g \in T_{\lambda_0}\) e \(X_0 = X \subseteq \omega\setminus \ran f_0\). Tendo
+   definido \(f_n \in T_{\lambda_n}\) e \(X_n\subseteq \omega\setminus \ran f_n\)
    finito, nós primeiro tomamos um conjunto \(X_{n+1} \supsetneq X_n\) finito tal
-   que \(X_{n+1} \subseteq \omega - \ran f_n\) (Note que por (ii) este último passo é
-   possível porque o conjunto \(\omega -\ran f_n\) é infinito).
+   que \(X_{n+1} \subseteq \omega\setminus \ran f_n\) (Note que por (ii) este último passo é
+   possível porque o conjunto \(\omega\setminus\ran f_n\) é infinito).
    Feito isso, escolhemos \(f_{n+1} \in T_{\lambda_{n+1}}\) tal que \(f_{n+1}
    \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que é possível
    por (iv).
@@ -711,9 +727,9 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe
  \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
  Vamos considerar o seguinte
- conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\text{ | }
-   \eta_f=f(0)<\lambda\text{ e
-   }\beta<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
+ conjunto: \[T\doteq\big\{f_{\eta,\beta}\text{ | }\eta<\lambda\text{ e
+   }\beta<\alpha_{\eta}\}\cup\big\{\varnothing\big\}\]
+   Onde \(f_{\eta,\beta}\colon\beta\to\kappa,\, f_{\eta,\beta}(0)=\eta,\, f_{\eta,\beta}(\gamma)=0\) para todo \(\gamma\neq0\). 
  Observe que \(T\) é ordenado pela ordem usual de funções e que para
  \(\varnothing\neq f,g\in T, f\leq g\) se, e somente se  \(f(0)=g(0)\) e
  \(\dom f\subseteq\dom g\).
