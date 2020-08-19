@@ -6,11 +6,12 @@ Pedro Felizatto - Número USP:9794531\\
 Pietro Mesquita Piccione - Número USP: 4630640\\
 Mateus Schmidt Mattos Lopes Pereira - Número USP: 10262892\\
 Luís Cardoso - Número USP: 4552403\\
-Ariel Campêlo Viana Morais - Número USP: 9302177
+Ariel Campêlo Viana Morais - Número USP: 9302177\\
 Bento Pereira - Número USP: 9783608}
 \date{\today}
 \begin{document}
 \maketitle
+
 \section*{Observações iniciais}
 
 As notas de aula a seguir foram produzidas com base na Seção 3 do Capítulo 12 de
@@ -41,8 +42,10 @@ Se \(x,y\in T\) são nós tais que  \(y<x\), dizemos que \(y\) é um
 
 Seja \(x\in T\) um nó.  A \emph{altura} \(h(x)\) de \(x\) é o único ordinal
 isomorfo ao conjunto bem ordenado \mbox{\(\{y\in T\,\colon
-y<x\}\),} composto por todos os antecessores de \(x\). Observe que como \(T\) é uma árvore,
-então \(\{y\in T\,\colon y<x\}\) é bem ordenado e a altura está bem-definida como função em \(T\).
+  y<x\}\),} composto por todos os antecessores de \(x\). Observe que como
+cada conjunto da forma \(\{y\in T\,\colon y<x\}\) é bem ordenado,
+então ele é isomorfo a um único ordinal. Sendo assim, a altura está
+bem-definida como função em \(T\).
 Além disso, se \(h(x)\) é um ordinal sucessor, dizemos que \(x\) é um
 \emph{nó sucessor}. Caso contrário \(x\) é denominado \emph{nó limite}.
 O \(\alpha\)-ésimo \emph{nível} de \(T\) é o conjunto
@@ -66,7 +69,7 @@ de \(T^\prime\) é dado por \(T_\alpha^\prime= T_\alpha \cap T^\prime\).
 comprimento \(\alpha\); entretanto, se \(\alpha\) é um ordinal limite então
 \(T^{(\alpha)}\) pode ter outros ramos de comprimento \(\alpha\).
 
-Finalmente, um conjunto \(A\subseteq T\) é uma \emph{anti-cadeia} em \(T\) se
+Finalmente, um conjunto \(A\subseteq T\) é uma \emph{anticadeia} em \(T\) se
 quaisquer elementos de \(A\) são incomparáveis. Isto é, se \(x,y\in A\) são tais
 que \(x\not = y\), então \(x\not \leq y\) e \(y\not \leq x\).
 
@@ -107,7 +110,7 @@ definições que apresentamos:
 
   \item Seja \(r\in T\) tal que \(h(r)=0\), então temos que \(\{x\in T\,\colon
     x<r\}=\varnothing\), da onde segue que \(r\) é o menor elemento de \(T\), a raiz.
-    Agora suponhamos \(r_1\, r_2\in T\), de modo que \(h(r_1)=h(r_2)=0\). Então \(r_1\) e
+    Agora suponha que existem \(r_1, r_2\in T\) tais que \(h(r_1)=h(r_2)=0\). Então \(r_1\) e
     \(r_2\) são raízes de \(T\). Neste caso,  para todo \(x\in T\) temos que
     \(r_1\leq x\). Em particular temos que \(r_1\leq r_2\).
     Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
@@ -128,7 +131,7 @@ definições que apresentamos:
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
     existe \(y\in T_\alpha\) tal que \(y < x\). Assumindo o contrário, teremos
-    que o ramo da subárvore \(b\coloneqq\{y\in T^{(h(x))}\,\colon y<x\}\) não possui elemento em
+    que o ramo \(b\coloneqq\{y\in T^{(h(x))}\,\colon y<x\}\) não possui elemento em
     \(T_\alpha\). Daí, segue que \[S(\alpha)=h(x)=\ell(b)\leq\alpha,\] que é um absurdo. 
     Assim, tome \(y\in T_\alpha\) tal que \(y<x\) qualquer. Se
     existe \(z\) tal que \(y<z<x\), então obtemos
@@ -229,28 +232,33 @@ Logo existe \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
 
-Para o caso \(\alpha<\ell(b)\) faremos por indução%\footnote{Para formalizar
+Por fim, faremos o caso \(\alpha<\ell(b)\) utilizando indução%\footnote{Para formalizar
 %  melhor, aqui nos faltou alguma
 %técnica que nos possibilitasse usar recursão quando \(\alpha\) é ordinal limite.
 %Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem
 %esse problema}.
 
-Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e
-\(\card{b \cap T_\beta} = 1\), para \(\beta < \alpha\).
-Definimos \(r(\beta)\in T_\beta\cap b\). Logo temos uma função \(r\colon\alpha\to T^{(\alpha)}\cap b\) que é bijetora
-pois se \(r(\beta)=r(\lambda)\doteq y\), temos que \(y\in T_\beta\cap T_\lambda\cap b\)
-\red{TERMINAR} Concluímos que \(r\) é injetora. 
-Vejamos a sobrejetividade: se \(x\in
-T_\alpha\cap b=\bigcup_{\beta<\alpha}T_\beta\cap b,\) logo existe \(\beta\) tal que \(x\in
-T_\beta\cap b\) e assim \(x=r(\beta)\).
-
-Evidentemente, para todo \(\lambda<\alpha,h(r(\lambda))=\lambda\). Desta forma, \(r\) é um
-isomorfismo. Como \(\alpha<\ell(b)\), então \(b\setminus (T^{(\alpha)}\cap b)\neq\varnothing\).
-Existe assim \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se \(\gamma>\alpha,\)
-então existe \(p\in \{\zeta\in T:\zeta<z\}\) tal que \(\{\zeta\in T:\zeta<p\}\) é isomorfo à
-\(\alpha\), observe que isso é possível pois \(\{\zeta\in T:\zeta<z\}\) e \(\alpha\) são bem
-ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além do mais, \(h(p)=\alpha\).
-Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que \(p\in b\) e \(h(p)=\alpha\).
+Como a raiz de \(T\) é unica e pertence a todos os ramos de \(T\), o resultado é
+verdadeiro quando \(\alpha = 0\). Seja \(\alpha < \ell(b)\)  e suponha que
+\(\card{b \cap T_\beta} = 1\) para cada \(\beta < \alpha\).
+Sendo assim, podemos definir uma única função \(r\colon\alpha\to
+T^{(\alpha)}\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\cap
+  T_\beta}=1\) para cada \(\beta<\alpha\). Além disso, \(r\) é injetora pois se
+existem \(\beta,\lambda\) distintos tais que \(r(\beta)=r(\lambda)\eqqcolon y\), temos que
+\(y\in T_\beta\cap T_\lambda\cap b\), contradizendo o segundo item do Exercício
+3.1. Assim concluímos que \(r\) é bijetora.
+\textcolor{red}{Falta terminar esse parágrafo.}
+Evidentemente,  temos que \(h(r(\lambda))=\lambda\) para cada \(\lambda
+<\alpha\). Desta forma, \(r\) é um isomorfismo entre \(\alpha\) e \(b\cap
+T^{(\alpha)}\). Como \(\alpha<\ell(b)\), então
+\(b\setminus (T^{(\alpha)}\cap b)\neq\varnothing\), o que nos garante a
+existência de \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se
+\(\gamma>\alpha\), então existe \(p\in \{\zeta\in T\,\colon\zeta<z\}\) tal que
+\(\{\zeta\in T\,\colon\zeta<p\}\) é isomorfo à
+\(\alpha\), observe que isso é possível pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
+\(\alpha\) são bem ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além
+do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
+\(p\in b\) e \(h(p)=\alpha\).
 
 
 \par 
@@ -292,16 +300,17 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
-        \[h(T)\geq\sup\{\ell(b)\,\colon b \text{ é um ramo de } T\}\]
+        \[h(T)\geq\sup\{\ell(b)\,\colon b \text{ é um ramo de } T\}.\]
         Assim nos resta verificar que \(h(T)\) é de fato o menor dos majorantes
          de \(\{\ell(b)\,\colon b \text{ é um ramo de } T\}\). Isto é, vamos
          provar que se \(\alpha\geq  \ell (b)\)
         para todo ramo \(b\) de \(T\), então \(\alpha\geq h(T)\).
         
-        De fato, se \(x\in T\), tome \(b_x\) um ramo de \(T\) tal que \(x\in b_x\) \red{pelo lema
-        de zorn né?}. Como \(\{\zeta\in T:\zeta<x\}\subsetneq b_x\), temos que \[h(x)<h(x)+1\leq
-        \ell(b_x)\leq\alpha\]
-        Assim, pleo exercício 3.1.(vi), \(h(T)\leq\alpha\).
+        De fato, se \(x\in T\), tome \(b_x\) um ramo de \(T\) tal que \(x\in
+        b_x\) . Como \(\{\zeta\in T\,\colon\zeta<x\}\subseteq b_x\), temos
+        que \[h(x)\leq h(x)+1\leq
+\ell(b_x)\leq\alpha\]
+        Assim, pelo último item do Exercício 3.1, obtemos que \(h(T)\leq\alpha\).
         
 
       \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
@@ -366,7 +375,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     decrescentes, ou seja, \(f\in T \) se, e somente se  \(f(i)>f(j)\)  para todo
     \(i<j<\dom(f)\in\Naturals\).  Então \((T,\subseteq)\) é uma subárvore de
     \((\Naturals^{<\omega},\subseteq)\). Note que a altura de  \(T\) é 
-    \(\omega\). Além disso, temos pelo Exercício 2.8 do Capítulo 3 que não
+    \(\omega\). Além disso, sabemos que não
     existe uma sequência de números naturais que seja infinita e decrescente.
     Assim conseguimos concluir que todos os ramos de \(T\) são finitos, o
     que implica que \(T\) não possui ramos cofinais.
@@ -383,20 +392,25 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     Em particular, as propriedades acima implicam que \((\Phi[T],\supseteq)\) é
     uma árvore isomorfa a \((T,\preceq)\). Por exemplo, se considerarmos
     a árvore \(S=\text{Seq}(\{0,1\})=\{0,1\}^{<\omega}\) ordenado por \(\subseteq\),
-    então o sistema do conjunto de Cantor \(\langle D_s \,\colon s\in S\rangle\) construído no Exemplo
-    3.18 do  Capítulo 10 é uma representação de \((S,\subseteq)\) por intervalos
-    fechados na reta real.
+    então o sistema do conjunto de Cantor \(\langle D_s \,\colon s\in
+    S\rangle\), onde definimos \(D_{\langle\rangle}=[0,1]\) e, se
+    \(D_{s}=[a,b]\) considerarmos
+    \begin{equation*}
+        D_{\langle s,0\rangle}=[a,a+\frac{b-a}{3}]\text{ e }
+        D_{\langle s,1\rangle}=[a+\frac{2(b-a)}{3},b]
+ \end{equation*}é uma representação de
+    \((S,\subseteq)\) por intervalos fechados na reta real.
     \end{enumerate}
   \end{exemplo}
   
   O estudo de árvores finitas é um dos  principais conceitos que aparecem em
   combinatória. Entretanto, não vamos nos aprofundar muito no tema. Ao invés
-  disso, vamos investigar algumas propriedades árvores infinitas, nos preocupando
+  disso, vamos investigar algumas propriedades de árvores infinitas, nos preocupando
   especialmente com condições suficientes para que uma árvore possua um ramo cofinal.
 
   Para árvores cuja altura é um ordinal sucessor a resposta é óbvia: se \(h(T)=\alpha +1\),
   então \(T_\alpha\neq\varnothing\) e para qualquer \(x\in T_\alpha\) temos que
-  \({{y\in T \,\colon y\leq x}}\) é ramo cofinal de \(T\). Assim, focaremos em
+  \(\{y\in T \,\colon y\leq x\}\) é ramo cofinal de \(T\). Assim, focaremos em
   árvores cuja altura é um limite. Por outro lado, o item (d) do Exemplo 3.2 nos diz que
   existem árvores de altura \(\omega\) que possuem apenas ramos finitos. O
   próximo teorema mostra que,  pensando na largura de uma árvore como um
@@ -417,30 +431,30 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
   \(T\) tal que, para todo \(n<\omega\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
   infinito.
 
-  Seja \(c_0\) a raiz de T e  note que \(\{a \in T\,\colon c_{0} \leq a \}= T\)
+  Seja \(c_0\) a raiz de \(T\) e  note que \(\{a \in T\,\colon c_{0} \leq a \}= T\)
   é infinito. Além disso, se \(\{a\in T\,\colon c_n\leq a\}\) é infinito para
   \(n<\omega\) e consideramos  o
   conjunto \(S_n\) dos sucessores imediatos de \(c_n\), então
   \[
   \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S_n} \{a\in T\,\colon b\leq a\}.
   \]
- Daí segue que existe \(b\in S_n\) tal que o conjunto \(\{a\in T\,\colon
- b\leq a\}\) é infinito, assim podemos utilizar o Axioma da Escolha para
- tomar \(c_{n+1}\) um tal \(b\). 
- Finalmente, temos que
+ Daí, como \(S_n\) é finito por hipótese, segue que existe \(b\in S_n\) tal que
+ o conjunto \(\{a\in T\,\colon b\leq a\}\) é infinito, assim podemos utilizar o
+ Axioma da Escolha para tomar \(c_{n+1}\) um tal \(b\). 
+ Finalmente, vamos mostrar que
   \[r\doteq\{a\in T\,\colon a\leq c_n \text{ para algum }
     n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
   é um ramo infinito de \(T^{(\omega)}=T\).
-  Com efeito, sejam \(x,y\in r\), então
-  \(x\leq c_n\) e \(y\leq c_m\) para algum \(n,m\in\Naturals\).
-  Tomemos \(p=\max\{n,m\}\) e temos \(x,y\leq c_p\), portanto ou \(x\leq y\) ou
-  \(y\leq x\) pois \(T^{(p)}\) é uma árvore. \(r\) é maximal pois seja
-  \(r\subsetneq C\) cadeia, assim se \(z\in C\setminus r\), \(z>c_n\) para todo \(n\in\Naturals\).
-  Desse modo, \(h(z)\geq n\) para todo \(n\in\Naturals\) e temos
-  \(h(z)\geq\omega=h(T)\), absurdo.
+  Com efeito, se \(x,y\in r\), então existem \(n,m\in\Naturals\) tais que
+  \(x\leq c_n\) e \(y\leq c_m\).
+  Tomando \(p=\max\{n,m\}\), temos que \(x,y\leq c_p\) e portanto  \(x\leq y\) ou
+  \(y\leq x\),  pois \(T^{(p)}\) é uma árvore. Além disso, \(r\) é maximal pois se
+  \(C\supsetneq r\) é uma  cadeia e \(z\in C\setminus r\), então \(z>c_n\)
+  para todo \(n\in\Naturals\), contradição. Desse modo, segue que \(h(z)\geq n\)
+  para todo \(n\in\Naturals\) e daí \(h(z)\geq\omega=h(T)\), absurdo.
   \end{proof}
 
-    Em especial, observe que usamos o Teorema da Recursão sem
+    Observe que usamos o Teorema da Recursão sem
     explicitamente especificar uma função \(g\) para
     calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para construir tal função precisamos
     aplicar o Axioma da Escolha: se \(k\) é uma função escolha para
@@ -456,89 +470,90 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
 \begin{exercicio}
   Seja \(\kappa\) um cardinal infinito e seja \((T,\leq)\) uma árvore de altura
   \(\kappa\). Prove que se todos os níveis de \(T\) são finitos, então \(T\)
-  possui um ramo de tamanho \(\kappa\).
+  possui um ramo de comprimento \(\kappa\).
   
   \emph{Dica: Seja \(U_\alpha=\{x\in T_\alpha\,\colon\card{\succc{x}}=\kappa\}\). Prove que
   \(\{\card{U_\alpha},\alpha<\kappa\}\subset\Naturals\) é limitado. Seja M o seu
   máximo, mostre que \(T\) possui exatamente M ramos de tamanho \(\kappa\)}.
 \end{exercicio}
 \begin{proof}[Solução]
-    Observamos que a dica não vale em geral: Seja
-    \(T\) a árvore cujos nós possuem somente 2 sucessores imediatos.
-    \(h(T)=\omega\) e cada nível \(T_n\) é   tal que \(\card{T_n}=2^n\),
+    Observemos que a dica não vale em geral: considere a árvore
+    \(T\)  tal que cada nó possui exatamente 2 sucessores imediatos e que 
+    \(h(T)=\omega\). É fácil ver para cada nível \(T_n\)  temos \(\card{T_n}=2^n\),
     então \(U_n=\{x\in T_n\,\colon\card{y\in T\,\colon x\leq y}=\kappa\} =T_n\)
-      de modo que \(\card{U_n}=\card{T_n}=2^n\) iremos demonstrar por partes:
+      de modo que \(\card{U_n}=\card{T_n}=2^n\), não sendo limitado. Nesse
+      contexto, iremos separar nossa demonstração em casos:
   \begin{enumerate}[(i)]
-      \item Para \(\text{cf}(\kappa)<\omega\)
-      
-      Agora como \(\text{cf}(\kappa)<\omega\), tomemos \((\alpha_n)_\Naturals\)
-      sequência crescente cofinal, podemos tomar \(\alpha_0=0\).
-      Por indução, construímos \(c_n\in T{\alpha_n}\) crescente tal que
+  \item Para o caso em que \(\text{cf}(\kappa)<\omega\), consideramos
+    \((\alpha_n)_\Naturals\)  sequência crescente cofinal tal que \(\alpha_0=0\).
+      Por indução, vamos construir uma sequência \(c_n\in T_{\alpha_n}\) crescente tal que
       \(\card{\succc{c_n}}=\kappa\). Uma vez feito isso, definamos
       \(b=\{y\in T\,\colon y<c_n\text{ para algum
-      }n\in\Naturals\}=\bigcup_{i<n}c_i\). Então \(b\) será ramo
-      (não é difícil mostrar que b é maximal) e o  comprimento
-      \(\ell(b)=\kappa\). Seja \(c_0\) a raiz de \(T\), então observemos que \mbox{\(S_n\coloneqq\{y\in
+      }n\in\Naturals\}=\bigcup_{i<n}c_i\). De maneira análoga ao Teorema 3.2,
+      concluímos que \(b\) é um ramo de comprimento \(\ell(b)=\kappa\).
+      
+      Com efeito, seja \(c_0\) a raiz de \(T\) e observe que \mbox{\(S_n\coloneqq\{y\in
       T\,\colon y\geq c_n\}\cap T_{\alpha_{n+1}}\neq\varnothing\),}
-      pois pelo exercício anterior, se fosse vazio, então
+      pois, pelo exercício anterior, se \(S_n\) fosse vazio, então
       \mbox{\(\{y\in T\,\colon c_n\leq y\}\subset T^{(\alpha_{n+1})}\)} e como todos os
       níveis são finitos e \(\alpha_{n+1}<\kappa\) então
-      \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ser pela definição de
-      \(c_n\). Observamos que existe \(y\in S_n\) tal que
-      \(\card{\succc{y}}=\kappa\) pois caso contrário
-      \(\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in
+      \(\card{T^{(\alpha_{n+1})}}<\kappa\), o que não pode ocorrer pela definição de
+      \(c_n\). Também notamos que existe \(y\in S_n\) tal que
+      \(\card{\succc{y}}=\kappa\). Caso contrário, teríamos que
+      \[\succc{c_n}=\big(\succc{c_n}\cap T^{(\alpha_{n+1})}\big)\cup\{\zeta\in
       T\,\colon x <\zeta\text{ para
-        algum }x\in S_n\}\) e portando\(\card{\succc{c_n}}\neq\kappa\).
-      Assim tome \(c_{n+1}\in S_n\) tal que \(\card{\succc{c_{n+1}}}=\kappa\).
+        algum }x\in S_n\},\] e portanto \(\card{\succc{c_n}}\neq\kappa\).
+      Assim, tome \(c_{n+1}\in S_n\) tal que \(\card{\succc{c_{n+1}}}=\kappa\).
 
       \item Para \(\text{cf}(\kappa)>\omega\), mostraremos que o conjunto
       \(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\) é limitado em \(\Naturals\). Suponha que
-      \mbox{\(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\)} não é limitado, tome
-      \(\alpha_n\) tal que \(\alpha_n\) é a menor solução para
-      \(\card{U_\alpha}\geq n\). Vejamos que \(\alpha_n\) é sequência cofinal em \(\kappa\)
-      pois para todo \(\lambda<\kappa\), \(U_\lambda\) é finito e para
-      \(l=\card{U_\lambda},\alpha_{l+1}>\lambda\) por construção.
-      Estabelecida a dica, seja \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e
-      \(\overline{\alpha}\) tal que
-      \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para
-      todo \(\alpha>\overline{\alpha}\), existe \(
-      f=f_{\overline{\alpha},\alpha}\colon U_{\overline{\alpha}}\rightarrow U_\alpha\) bijeção tal que
-      \(f(x)\geq x,\forall x\). Fixado \(x\in U_{\overline{\alpha}}\),
-      observemos que analogamente ao que foi
-      feito anteriormente
-      (\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\)), temos f
-      com as propriedades. Agora vamos mostrar \(f\) injetora. Supõe
-      \(f(x)=f(y)=z\implies z\geq x, z\geq
-      y\implies x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma
-      árvore. \(f\) é sobrejetora pois
+      \mbox{\(\{\card{U_\alpha\,\colon\alpha<\kappa}\}\)} não é limitado e considere
+      \(\alpha_n\) como a menor solução para
+      \(\card{U_\alpha}\geq n\). Note que \(\alpha_n\) é sequência cofinal em \(\kappa\)
+      pois para todo \(\lambda<\kappa\) o conjunto \(U_\lambda\) é finito, e para
+      \(l=\card{U_\lambda}\) temos que \(\alpha_{l+1}>\lambda\) por construção.
+
+      Estabelecida a dica, sejam \(M=\max\{\card{U_\beta},\beta<\kappa\}\) e
+      \(\overline{\alpha}\) tais que \(\card{U_{\overline{\alpha}}}=M\). Mostraremos que para
+      todo \(\alpha>\overline{\alpha}\), existe uma bijeção
+      \(f=f_{\overline{\alpha},\alpha}\colon U_{\overline{\alpha}}\to
+      U_\alpha\)  tal que \(f(x)\geq x\) para cada \(x\in
+      U_{\overline{\alpha}}\). Fixado \(x\in U_{\overline{\alpha}}\),
+      observemos que de modo análogo ao que foi
+      feito anteriormente,
+      \mbox{(\(c_n=x, c_{n+1}=f(x),\alpha_n=\overline{\alpha}, \alpha_{n+1}=\alpha\))}, temos \(f\)
+      com as propriedades desejadas. Agora vamos mostrar \(f\) injetora. Com
+      efeito, se \(x,y\in T_{\overline{\alpha}}\) são tais que  
+      \(f(x)=f(y)=z\), então \(z\geq x\) e \(z\geq
+      y\), implicando que \(x=y\) pois \(x,y\in T_{\overline{\alpha}}\) e \(T\) é uma
+      árvore. Além disso, \(f\) é sobrejetora pois
       \(\card{U_{\overline{\alpha}}}\geq\card{U_\alpha}\in\Naturals\).
       Por fim, para \(x\in U_{\overline{\alpha}}\) defina \[b_x\coloneqq
-      \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}\].
+      \{f_{\overline{\alpha},\beta}(x)\,\colon\beta>\overline{\alpha}\}\cup\{y\in T\,\colon y\leq x\}.\]
       Observe que \(b_x\) é ramo pois \(\overline{\alpha}<\beta<\gamma\) implica que
       \(f_{\beta,\gamma}(f_{\overline{\alpha},\beta}(x))=f_{\overline{\alpha},\gamma}(x)\)
       pois ambos são  maiores que \(x\) e
       \(\card{U_{\overline{\alpha}}}=\card{U_\gamma}\) e  \(T\) é uma árvore.
       
-      Assim provamos e observe que \(\ell(b_x)=\kappa\), nos permitindo
-      finalmente concluir que existe um ramo com as
-      propriedades desejadas e na verdade existem \(M\) deles.\qedhere
+      Assim provamos \(b\) é um ramo. Observando que \(\ell(b_x)=\kappa\),
+      concluímos que \(b\) é cofinal como desejado.\qedhere
     \end{enumerate}
     \end{proof}
     
     \begin{proof}[Uma ideia alternativa usando conceitos de topologia]
       \footnote{Esta solução foi uma tentativa
     de usar o Teorema de Tychonoff
-    neste contexto porém esta ideia não está completa e
-    não deve ser considerada como uma demonstração e
-    apenas um devaneio lúdico sobre uma possível aplicação deste
+    no contexto de árvores. Porém, a ideia não está completa e
+    não deve ser considerada como uma demonstração, mas sim
+    um devaneio lúdico sobre uma possível aplicação deste
     resultado interessante de topologia.}
   
-   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como
+   Para demonstrar tal resultado, vamos interpretar os ramos da árvore \(T\) como
    compactos contidos num espaço topológico produto.
-   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\),
-   onde \(0\) é um elemento que não faz parte do ambiente de \(T\),
-   serve simplesmente para identificar a falta de nós sucessores, munido do
-   produto  das topologias discretas, então o conjunto \(C\) dos ramos da árvore
+   De fato, temos que consideramos o conjunto \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\),
+   (onde \(0\) é um elemento que não faz parte do ambiente de \(T\),
+   que serve simplesmente para identificar a falta de nós sucessores) munido do
+   produto  das topologias discretas, então o conjunto \(C\) dos ramos de \(T\)
    é identificado como
    \[C=\{(x_\alpha)_{\alpha<\kappa}\in X \,\colon x_\beta<x_{\beta+1}\text{ pra
      todo }\beta\},\] onde definimos \(0>x\text{ pra todo }x\in T\). Não é
@@ -552,10 +567,10 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
    ramo que desejamos.
   
    Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
-   para \(\alpha<\lambda\), de maneira tal que \mbox{\(\sup\{\ell(b)\,\colon b\in
-   F_\alpha\}=\kappa\)} (Como visto n item (iv) do  Exercício 3.2).
+   para \(\alpha<\lambda\) de modo que \mbox{\(\sup\{\ell(b)\,\colon b\in
+   F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício 3.2).
    %falta definir ell(b)
-   Como todo nó possui somente finitos sucessores imediatos, temos que
+   Como todo nó possui uma quantidade  finita de sucessores imediatos, temos que
     existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
    \[F_\lambda\doteq\{(x_\beta)\in C\,\colon
      x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que
@@ -599,44 +614,49 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
     \end{enumerate}
 
-    Em primeiro lugar, observe que uma vez demonstrada a existência de uma tal
-    família se \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), mostraremos que \(T\) é
-    a árvore  de Aronszajn que desejamos. De fato, \((T,<)\) é um conjunto
-    ordenado de acordo com a contenção de funções usual.
+    Em primeiro lugar, vamos provar  que uma vez demonstrada a existência de uma tal
+    família, o conjunto  \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), ordenado de
+    acordo com a contenção usual de funções, é a árvore  de
+    Aronszajn que desejamos.
     
     Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então
-    \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset
-    T,\) além disso,  se \(x\in T\), então mostremos que \(A_x\coloneqq\{y\in
+    \(\rest{f}{0}=\varnothing\) e daí por (iii) segue que
+    \mbox{\(f\geq\varnothing\in T_0\subset T\)}. Além disso, mostremos que se
+    \(x\in T\), então o conjunto \(A_x\coloneqq\{y\in
     T\,\colon y<x\}\) é bem ordenado. Para facilitar a notação, considere
     \(o\colon T\rightarrow \{\alpha<\omega_1\}\) tal que \(x\in T_{o(x)}\). Seja
-    \(A\subset A_x\), assim defina \(A^\ast\coloneqq \{\alpha<\omega_1\,\colon
+    \(A\subset A_x\) e defina \(A^\ast\coloneqq \{\alpha<\omega_1\,\colon
     x\in T_\alpha\cap A\}\). 
     Como os ordinais são bem ordenados, existe \(\beta\in A^\ast\) menor
     elemento de \(A^\ast\).
     Logo, se \(m\in T_\beta\cap A\), então para todo \(g\in A\) temos
     \(o(g)\geq\beta\),  e como \(\rest{f}{o(g)}=g\) e \(\rest{f}{\beta}=m\),
-    \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o
-    menor elemento de \(A\).
+    concluímos que \(\rest{g}{\beta}=\rest{f}{\beta}=m\).
+    Portanto \(g\geq m\) e \(m\) é o menor elemento de \(A\).
     
-    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\),
-    vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo
+    Falta verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\).
+    Com efeito, vejamos que:
+    \begin{enumerate}[(a)]
+    \item Por (i), os níveis são enumeráveis.
+     \item  Por (iv), para todo
     \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e
-    \(X\) qualquer,  então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não
+    \(X\) qualquer,  então \(h(T)=\omega_1\).
+    \item Precisamos verificar que \(T\) não
     possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com
     \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é
     função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em
-    \(\omega\):  \(F\) é função pois se \(\langle x,p\rangle,\langle
+    \(\omega\): veja que  \(F\) é função pois se \(\langle x,p\rangle,\langle
     x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in
     f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade,
     \(f_p>f_q\). Assim \(\rest{(f_p)}{o(f_q)}=f_q\) então \(p=q\). Analogamente
     \(F\) é injetora. Absurdo.
-    
+    \end{enumerate}     
     
     Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda,
     T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor,
     \(\lambda=\alpha+1\), para algum \(\alpha\), definimos
-    \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
-    T_\alpha \text{ e } a\in \omega\setminus\ran g\}\]
+    \[T_{\alpha+1}=\Big\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
+    T_\alpha \text{ e } a\in \omega\setminus\ran g\Big\}.\]
     
     Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
     \begin{enumerate}[(i)]
@@ -673,7 +693,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
    que \(X_{n+1} \subseteq \omega\setminus \ran f_n\) (Note que por (ii) este último passo é
    possível porque o conjunto \(\omega\setminus\ran f_n\) é infinito).
    Feito isso, escolhemos \(f_{n+1} \in T_{\lambda_{n+1}}\) tal que \(f_{n+1}
-   \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que é possível
+   \supseteq f_n\) e  \(X_{n+1} \cap \ran f_{n+1} = \varnothing\), o que é possível
    por (iv).
    
    Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon \lambda\to
@@ -692,11 +712,11 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
      \lambda} T_{\beta} \text{ e cada } X \subseteq \omega\setminus\ran
    g\big\}\). Portanto  (iv) também é satisfeito por construção. Falta verificar
    (i). Com efeito,
-   \(\card{T_\lambda}\leq\card{\bigcup_{\beta<\lambda}T_{\beta}}\card{\mathcal
+   \[\card{T_\lambda}\leq\card{\bigcup_{\beta<\lambda}T_{\beta}}\card{\mathcal
      P^f(\omega)} \le \card{\omega}\sum_{\beta<\lambda}\card{T_{\beta}}
-   \le \aleph_0^2=\aleph_0\), onde \(\mathcal P^f\) indica o conjunto das partes finitas.
+   \le \aleph_0^2=\aleph_0,\] onde \(\mathcal P^f\) indica o conjunto das partes finitas.
    
-   Temos assim \(T\) árvore de Aronszajn de altura \(\omega_1\).
+   Conforf \(T\) árvore de Aronszajn de altura \(\omega_1\).
 \end{proof}
 
  A questão da existência de árvores de Aronszajn é muito complicada e ainda não
@@ -724,7 +744,7 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe
  \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
  Vamos considerar o seguinte
- conjunto: \[T\doteq\big\{f_{\eta,\beta}\text{ | }\eta<\lambda\text{ e
+ conjunto: \[T\doteq\big\{f_{\eta,\beta}\,\colon\eta<\lambda\text{ e
    }\beta<\alpha_{\eta}\}\cup\big\{\varnothing\big\}\]
    Onde \(f_{\eta,\beta}\colon\beta\to\kappa,\, f_{\eta,\beta}(0)=\eta,\, f_{\eta,\beta}(\gamma)=0\) para todo \(\gamma\neq0\). 
  Observe que \(T\) é ordenado pela ordem usual de funções e que para
@@ -759,5 +779,21 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
 Assim encerra-se a Seção 3 sobre árvores.
   \bibliographystyle{plain}
   \bibliography{sample}
+  \textcolor{red}{Comentários sobre a correção:}
+  \begin{itemize}
+    \item Algumas correções, como por exemplo erros ortográficos e typos foram
+      corrigidos a menos da palavra `anticadeia', que foi erroneamente
+      corrigida. Além disso, encontramos outros erros do mesmo tipo que não
+      foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
+      do primeiro item do Exercício 3.3.
+      \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
+        itens (iii) e (iv) do Exercício 3.2.
+      \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
+        eliminar as referências ao livro. Acreditamos que não é conveniente que
+        o leitor das notas de aula, que são essencialmente uma tradução do
+        livro, precise também do livro original para entender o material.
+      \item Também adotamos o comando ``setminus'' para denotar exclusão de
+        conjuntos para que fique coerente com a notação utilizada nas notas de aula.
+  \end{itemize}
 \end{document}
 
