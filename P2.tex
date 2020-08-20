@@ -247,7 +247,7 @@ T^{(\alpha)}\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\ca
 existem \(\beta,\lambda\) distintos tais que \(r(\beta)=r(\lambda)\eqqcolon y\), temos que
 \(y\in T_\beta\cap T_\lambda\cap b\), contradizendo o segundo item do Exercício
 3.1. Assim concluímos que \(r\) é bijetora.
-\textcolor{red}{Falta terminar esse parágrafo.}
+
 Evidentemente,  temos que \(h(r(\lambda))=\lambda\) para cada \(\lambda
 <\alpha\). Desta forma, \(r\) é um isomorfismo entre \(\alpha\) e \(b\cap
 T^{(\alpha)}\). Como \(\alpha<\ell(b)\), então
@@ -282,7 +282,7 @@ do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
 %Segue que \(\card{b \cap T_\alpha} = 1\).
 
 Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer que
-\(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\) donde \(h(T)\geq\ell(b)\).
+\(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\), donde concluímos que \(h(T)\geq\ell(b)\).
 
 % O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
 % verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
@@ -661,24 +661,24 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
     \begin{enumerate}[(i)]
     \item \(T_{\alpha+1}\subseteq\omega^{\alpha+1}\) por construção, e
-      \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
+      \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\).
       \item Seja \(f\in T_{\alpha+1}\), então temos
         \(f=g\cup\{\langle\alpha,a\rangle\}\) 
         para alguma \(g\in T_\alpha \text{ e } a\in \omega\setminus\ran g\). Sabemos
         que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\)
-        para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
+        para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\).
       \item Seja \(f\in T_{\alpha+1}\), então temos
         \(f=g\cup\{\langle\alpha,a\rangle\}\) para
         alguma \(g\in T_\alpha \text{ e } a\in \omega\setminus\ran g\). Se
         \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\)
-        pois \(\beta\leq\alpha\)
+        pois \(\beta\leq\alpha\).
       \item Para qualquer \(\beta < \alpha+1\), qualquer \(g \in T_{\beta}\), e
     qualquer \(X \subseteq \omega\setminus \ran g\) finito, existe uma \(f \in
     T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
     Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que isto
     é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito).
     Então teremos  que \(f\cup\{\langle\alpha,a\rangle\}\in T_{\alpha+1}\) é a
-    funçãoque  desejamos
+    função que desejamos.
     \end{enumerate}
       
    Agora, vamos construir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
@@ -716,7 +716,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
      P^f(\omega)} \le \card{\omega}\sum_{\beta<\lambda}\card{T_{\beta}}
    \le \aleph_0^2=\aleph_0,\] onde \(\mathcal P^f\) indica o conjunto das partes finitas.
    
-   Conforf \(T\) árvore de Aronszajn de altura \(\omega_1\).
+   Como vimos anteriormente, \(T\) é uma árvore de Aronszajn de altura \(\omega_1\).
 \end{proof}
 
  A questão da existência de árvores de Aronszajn é muito complicada e ainda não
@@ -734,25 +734,27 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
 Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  Primeiramente daremos a ideia da demonstração: Fixado \(\kappa\), queremos
  encontrar uma árvore \(T\) de altura \(\kappa\), cujos ramos têm comprimento
- estritamente  menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de
+ estritamente  menor que \(\kappa\) mas que \(\sup \{\ell(b)\,\colon b\text{ é um ramo de
  }T\}=h(T)=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular,
  então existe \(\{\alpha_\eta\,\colon\eta<\lambda\}\) onde \(\lambda<\kappa\)
  com \mbox{\(\sup\{\alpha_\eta\}=\kappa\)}. Assim basta construir uma árvore formada
  por  ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura
  \(\alpha_\eta\)  para todo \(\eta<\lambda\). Agora construiremos tal árvore.
  
- Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe
+ Seja \(\kappa\) ordinal singular, e \(\lambda=\text{cf}(\kappa)<\kappa\). Então existe
  \(\{\alpha_\eta\,\colon \eta<\lambda\}\) subconjunto cofinal de \(\kappa\).
  Vamos considerar o seguinte
  conjunto: \[T\doteq\big\{f_{\eta,\beta}\,\colon\eta<\lambda\text{ e
    }\beta<\alpha_{\eta}\}\cup\big\{\varnothing\big\}\]
-   Onde \(f_{\eta,\beta}\colon\beta\to\kappa,\, f_{\eta,\beta}(0)=\eta,\, f_{\eta,\beta}(\gamma)=0\) para todo \(\gamma\neq0\). 
- Observe que \(T\) é ordenado pela ordem usual de funções e que para
- \(\varnothing\neq f,g\in T, f\leq g\) se, e somente se  \(f(0)=g(0)\) e
+   Onde temos que \(f_{\eta,\beta}\colon\beta\to\kappa\), que
+   \(f_{\eta,\beta}(0)=\eta\), e que \(f_{\eta,\beta}(\gamma)=0\) para todo \(\gamma\neq0\). 
+ Observe que \(T\) é ordenado pela ordem usual de funções e que para quaisquer
+ \(\varnothing\neq f,g\in T\) vale que \(f\leq g\) se, e somente se  \(f(0)=g(0)\) e
  \(\dom f\subseteq\dom g\).
- Vamos provar que \(T\) é uma árvore:  \(\{\varnothing\}\) é o menor elemento de
- \(T\). Seja \mbox{\(A_x=\{y\in T\,\colon y<x\}\)} e observe que \(A_x\) possui o mesmo
- tipo de ordem de  \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
+ Vamos provar que \(T\) é uma árvore: note que  \(\{\varnothing\}\) é o menor elemento de
+ \(T\). Além disso, seja \mbox{\(A_x=\{y\in T\,\colon y<x\}\)} e observe que
+ \(A_x\) possui o mesmo tipo de ordem de  \(\dom x\), que é bem ordenado. Assim
+ concluímos que \(T\) é de fato uma árvore. 
  
  Afirmamos que seus ramos são da forma \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) para algum
  \(\eta<\lambda\). Pois se \mbox{\(b_\eta=\{f\in T\,\colon f(0)=\eta\}\)} para algum
@@ -772,7 +774,7 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
  Observe que construímos \(T\) para que \(b_\eta=\{f\in T\,\colon f(0)=\eta\}\) tenha
  tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso
  \(h(T)=\sup\{\alpha_\eta\,\colon\eta<\lambda\}=\kappa\) e portanto \(T\) é
- árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
+ árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.\qedhere
  
 \end{proof}
 
@@ -787,7 +789,10 @@ Assim encerra-se a Seção 3 sobre árvores.
       foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
       do primeiro item do Exercício 3.3.
       \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
-        itens (iii) e (iv) do Exercício 3.2.
+        itens (iii) e (iv) do Exercício 3.2. Em contrapartida, decidimos não
+        escrever uma prova para o fato utilizado no início do Lema do Konig.
+        Isso porque acreditamos que a prova é trivial e iria desviar o olhar do
+        leitor da ideia principal, que queremos enfatizar.
       \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
         eliminar as referências ao livro. Acreditamos que não é conveniente que
         o leitor das notas de aula, que são essencialmente uma tradução do
