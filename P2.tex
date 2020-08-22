@@ -82,7 +82,7 @@ exercícios sugeridos pelo autor neste ponto do texto em \cite{jech}. Tais probl
 exploram algumas das propriedades que surgem imediatamente das
 definições que apresentamos:
 
-\begin{exercicio}
+\begin{exercicio}\label{3.1}
   Seja \((T,\leq)\) uma árvore. Mostre que:
   \begin{enumerate}[(i)]
   \item O único elemento \(r \in T\) tal que \(h(r)=0\) é a raiz. Em particular,
@@ -179,7 +179,7 @@ as propriedades dadas no enunciado, então o conjunto
     h(T)\). Absurdo.\qedhere
 \end{enumerate}
 \end{proof}
-\begin{exercicio}
+\begin{exercicio}\label{3.2}
     Seja \((T,\leq)\) uma árvore. Mostre que:
     \begin{enumerate}[(i)]
     \item Cada cadeia em \(T\) é bem-ordenada;
@@ -309,7 +309,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
         b_x\) . Como \(\{\zeta\in T\,\colon\zeta<x\}\subseteq b_x\), temos
         que \[h(x)\leq h(x)+1\leq
 \ell(b_x)\leq\alpha\]
-        Assim, pelo último item do Exercício 3.1, obtemos que \(h(T)\leq\alpha\).
+        Assim, pelo último item do Exercício \ref{3.1}, obtemos que \(h(T)\leq\alpha\).
         
 
       \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
@@ -421,7 +421,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
 \begin{proof}
-  Em primeiro lugar, observamos que se  \(T\) é uma árvore de altura \(\omega\), então cada nó de \(T\) possui
+  Em primeiro lugar, observamos que\footnote{Este fato é verdade pois se $\alpha < \omega$, $\alpha$ é um ordinal sucessor, e portanto o fato segue sem dificuldades do item (iv) do Exercício \ref{3.1}} se  \(T\) é uma árvore de altura \(\omega\), então cada nó de \(T\) possui
   um número finito de sucessores imediatos se, e somente se todos os níveis de
   \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
   árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
@@ -466,7 +466,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
     cofinal não importando sua altura. Nesse sentido, o resultado a seguir é uma
     generalização do Lema de König.
   
-\begin{exercicio}
+\begin{exercicio}\label{3.3}
   Seja \(\kappa\) um cardinal infinito e seja \((T,\leq)\) uma árvore de altura
   \(\kappa\). Prove que se todos os níveis de \(T\) são finitos, então \(T\)
   possui um ramo de comprimento \(\kappa\).
@@ -567,7 +567,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
   
    Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido
    para \(\alpha<\lambda\) de modo que \mbox{\(\sup\{\ell(b)\,\colon b\in
-   F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício 3.2).
+   F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício \ref{3.2}).
    %falta definir ell(b)
    Como todo nó possui uma quantidade  finita de sucessores imediatos, temos que
     existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
@@ -725,7 +725,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
  possuem a  \textit{propriedade de árvore}. O exercício a seguir nos mostra que
  cardinais singulares não satisfazem tal requisito.
 
- \begin{exercicio}
+ \begin{exercicio}\label{3.4}
   Construa uma árvore de Aronszajn de altura \(\aleph_{\omega}\). Generalize
   para um cardinal singular \(\kappa\) qualquer.
 \end{exercicio}
@@ -779,16 +779,16 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
 
 Assim encerra-se a Seção 3 sobre árvores.
   \bibliographystyle{plain}
-  \bibliography{sample}
+  \bibliography{ref}
   \textcolor{red}{Comentários sobre a correção:}
   \begin{itemize}
     \item Algumas correções, como por exemplo erros ortográficos e typos foram
       corrigidos a menos da palavra `anticadeia', que foi erroneamente
       corrigida. Além disso, encontramos outros erros do mesmo tipo que não
       foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
-      do primeiro item do Exercício 3.3.
+      do primeiro item do Exercício \ref{3.3}.
       \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
-        itens (iii) e (iv) do Exercício 3.2.
+        itens (iii) e (iv) do Exercício \ref{3.2}.
       \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
         eliminar as referências ao livro. Acreditamos que não é conveniente que
         o leitor precise do livro original para entender o material.
@@ -796,4 +796,3 @@ Assim encerra-se a Seção 3 sobre árvores.
         conjuntos para que fique coerente com a notação utilizada nas notas de aula.
   \end{itemize}
 \end{document}
-
