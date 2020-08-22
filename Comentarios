@@ -1,0 +1,18 @@
+\documentclass[A4paper]{article}
+\title{Comentários sobre as correções}
+\begin{document}
+\begin{itemize}
+    \item Algumas correções, como por exemplo erros ortográficos e typos foram
+      corrigidos a menos da palavra `anticadeia', que foi erroneamente
+      corrigida. Além disso, encontramos outros erros do mesmo tipo que não
+      foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
+      do primeiro item do Exercício {3.3}.
+      \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
+        itens (iii) e (iv) do Exercício {3.2}. Além disso, colocamos uma nota de rodapé para a observação inicial do Lema de König.
+      \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
+        eliminar as referências ao livro. Acreditamos que não é conveniente que
+        o leitor precise do livro original para entender o material.
+      \item Também adotamos o comando ``setminus'' para denotar exclusão de
+        conjuntos para que fique coerente com a notação utilizada nas notas de aula.
+  \end{itemize}
+\end{document}
