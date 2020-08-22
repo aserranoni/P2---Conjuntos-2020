@@ -23,8 +23,8 @@ passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 \setcounter{section}{2}
 \section{Árvores}
 
-Assim como fizemos anteriormente com partições, vamos agora dedicar uma seção do
-nosso trabalho para generalizar mais um objeto originário do
+Vamos agora dedicar
+nosso trabalho para generalizar um objeto originário do
 contexto de combinatória finita: árvores.
 
 \begin{definition}
@@ -82,7 +82,7 @@ exercícios sugeridos pelo autor neste ponto do texto em \cite{jech}. Tais probl
 exploram algumas das propriedades que surgem imediatamente das
 definições que apresentamos:
 
-\begin{exercicio}
+\begin{exercicio}\label{3.1}
   Seja \((T,\leq)\) uma árvore. Mostre que:
   \begin{enumerate}[(i)]
   \item O único elemento \(r \in T\) tal que \(h(r)=0\) é a raiz. Em particular,
@@ -118,7 +118,7 @@ definições que apresentamos:
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
     
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
-    \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
+    \(\alpha=h(x)=\beta\).
 
   \item Para a primeira igualdade, note que \(T^{(h(T))}\subseteq T\) uma vez
     que \(T^{(h(T))}\) é definido como uma união de subconjuntos de \(T\). Por
@@ -179,7 +179,7 @@ as propriedades dadas no enunciado, então o conjunto
     h(T)\). Absurdo.\qedhere
 \end{enumerate}
 \end{proof}
-\begin{exercicio}
+\begin{exercicio}\label{3.2}
     Seja \((T,\leq)\) uma árvore. Mostre que:
     \begin{enumerate}[(i)]
     \item Cada cadeia em \(T\) é bem-ordenada;
@@ -242,7 +242,7 @@ Como a raiz de \(T\) é unica e pertence a todos os ramos de \(T\), o resultado 
 verdadeiro quando \(\alpha = 0\). Seja \(\alpha < \ell(b)\)  e suponha que
 \(\card{b \cap T_\beta} = 1\) para cada \(\beta < \alpha\).
 Sendo assim, podemos definir uma única função \(r\colon\alpha\to
-T^{(\alpha)}\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\cap
+T^{(\alpha)}\cap b\) de modo que \(r(\lambda)\in T_\lambda\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\cap
   T_\beta}=1\) para cada \(\beta<\alpha\). Além disso, \(r\) é injetora pois se
 existem \(\beta,\lambda\) distintos tais que \(r(\beta)=r(\lambda)\eqqcolon y\), temos que
 \(y\in T_\beta\cap T_\lambda\cap b\), contradizendo o segundo item do Exercício
@@ -255,10 +255,17 @@ T^{(\alpha)}\). Como \(\alpha<\ell(b)\), então
 existência de \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se
 \(\gamma>\alpha\), então existe \(p\in \{\zeta\in T\,\colon\zeta<z\}\) tal que
 \(\{\zeta\in T\,\colon\zeta<p\}\) é isomorfo à
+<<<<<<< HEAD
 \(\alpha\), observe que isso é possível pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
 \(\alpha\) são bem ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além
 do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p= z\) e teremos que
 \(p\in b\) e \(h(p)=\alpha\).
+=======
+\(\alpha\), observe que isso é verdade pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
+\(\alpha\) são bem ordenados. Como \(p<z\in b\), temos que \(p\in b\). Além
+do mais, \(h(p)=\alpha\) nos diz que \(p\in b\cap T_\alpha\) e teremos finalmente \(\card{b\cap T_\alpha}=1\) . Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
+\(p\in b\) e \(h(p)=\alpha\), tendo assim que \(\card{b\cap T_\alpha}=1\).
+>>>>>>> a84d20c31bba3c630204079dff1ab3d01cee7638
 
 
 \par 
@@ -281,8 +288,7 @@ do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p= z\) e teremos que
 %Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
 %Segue que \(\card{b \cap T_\alpha} = 1\).
 
-Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer que
-\(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\), donde concluímos que \(h(T)\geq\ell(b)\).
+Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pela definição de \(h(T)\), assim \(\ell(b)\leq h(T)\).
 
 % O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
 % verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
@@ -310,7 +316,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
         b_x\) . Como \(\{\zeta\in T\,\colon\zeta<x\}\subseteq b_x\), temos
         que \[h(x)\leq h(x)+1\leq
 \ell(b_x)\leq\alpha\]
-        Assim, pelo último item do Exercício 3.1, obtemos que \(h(T)\leq\alpha\).
+        Assim, pelo último item do Exercício \ref{3.1}, obtemos que \(h(T)\leq\alpha\).
         
 
       \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
@@ -422,7 +428,8 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
 \begin{proof}
-  Em primeiro lugar, observamos que se  \(T\) é uma árvore, então cada nó de \(T\) possui
+  Em primeiro lugar, observamos que\footnote{Este fato é verdade pois se $\alpha < \omega$, $\alpha$ é um ordinal sucessor, 
+  e portanto o fato segue sem dificuldades do item (iv) do Exercício \ref{3.1}} se  \(T\) é uma árvore de altura \(\omega\), então cada nó de \(T\) possui
   um número finito de sucessores imediatos se, e somente se todos os níveis de
   \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
   árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
@@ -467,7 +474,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
     cofinal não importando sua altura. Nesse sentido, o resultado a seguir é uma
     generalização do Lema de König.
   
-\begin{exercicio}
+\begin{exercicio}\label{3.3}
   Seja \(\kappa\) um cardinal infinito e seja \((T,\leq)\) uma árvore de altura
   \(\kappa\). Prove que se todos os níveis de \(T\) são finitos, então \(T\)
   possui um ramo de comprimento \(\kappa\).
@@ -568,7 +575,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
   
    Defina \(F_0= C\). Indutivamente suponhamos \(F_\alpha\) bem definido
    para \(\alpha<\lambda\) de modo que \mbox{\(\sup\{\ell(b)\,\colon b\in
-   F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício 3.2).
+   F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício \ref{3.2}).
    %falta definir ell(b)
    Como todo nó possui uma quantidade  finita de sucessores imediatos, temos que
     existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
@@ -726,7 +733,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
  possuem a  \textit{propriedade de árvore}. O exercício a seguir nos mostra que
  cardinais singulares não satisfazem tal requisito.
 
- \begin{exercicio}
+ \begin{exercicio}\label{3.4}
   Construa uma árvore de Aronszajn de altura \(\aleph_{\omega}\). Generalize
   para um cardinal singular \(\kappa\) qualquer.
 \end{exercicio}
@@ -780,25 +787,20 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
 
 Assim encerra-se a Seção 3 sobre árvores.
   \bibliographystyle{plain}
-  \bibliography{sample}
+  \bibliography{ref}
   \textcolor{red}{Comentários sobre a correção:}
   \begin{itemize}
     \item Algumas correções, como por exemplo erros ortográficos e typos foram
       corrigidos a menos da palavra `anticadeia', que foi erroneamente
       corrigida. Além disso, encontramos outros erros do mesmo tipo que não
       foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
-      do primeiro item do Exercício 3.3.
+      do primeiro item do Exercício \ref{3.3}.
       \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
-        itens (iii) e (iv) do Exercício 3.2. Em contrapartida, decidimos não
-        escrever uma prova para o fato utilizado no início do Lema do Konig.
-        Isso porque acreditamos que a prova é trivial e iria desviar o olhar do
-        leitor da ideia principal, que queremos enfatizar.
+        itens (iii) e (iv) do Exercício \ref{3.2}.
       \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
         eliminar as referências ao livro. Acreditamos que não é conveniente que
-        o leitor das notas de aula, que são essencialmente uma tradução do
-        livro, precise também do livro original para entender o material.
+        o leitor precise do livro original para entender o material.
       \item Também adotamos o comando ``setminus'' para denotar exclusão de
         conjuntos para que fique coerente com a notação utilizada nas notas de aula.
   \end{itemize}
 \end{document}
-
