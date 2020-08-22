@@ -23,8 +23,8 @@ passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 \setcounter{section}{2}
 \section{Árvores}
 
-Assim como fizemos anteriormente com partições, vamos agora dedicar uma seção do
-nosso trabalho para generalizar mais um objeto originário do
+Vamos agora dedicar
+nosso trabalho para generalizar um objeto originário do
 contexto de combinatória finita: árvores.
 
 \begin{definition}
@@ -118,7 +118,7 @@ definições que apresentamos:
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
     
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
-    \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
+    \(\alpha=h(x)=\beta\).
 
   \item Para a primeira igualdade, note que \(T^{(h(T))}\subseteq T\) uma vez
     que \(T^{(h(T))}\) é definido como uma união de subconjuntos de \(T\). Por
@@ -242,7 +242,7 @@ Como a raiz de \(T\) é unica e pertence a todos os ramos de \(T\), o resultado 
 verdadeiro quando \(\alpha = 0\). Seja \(\alpha < \ell(b)\)  e suponha que
 \(\card{b \cap T_\beta} = 1\) para cada \(\beta < \alpha\).
 Sendo assim, podemos definir uma única função \(r\colon\alpha\to
-T^{(\alpha)}\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\cap
+T^{(\alpha)}\cap b\) de modo que \(r(\lambda)\in T_\lambda\cap b\). Veja que \(r\) que é sobrejetora uma vez que \(\card{b\cap
   T_\beta}=1\) para cada \(\beta<\alpha\). Além disso, \(r\) é injetora pois se
 existem \(\beta,\lambda\) distintos tais que \(r(\beta)=r(\lambda)\eqqcolon y\), temos que
 \(y\in T_\beta\cap T_\lambda\cap b\), contradizendo o segundo item do Exercício
@@ -255,10 +255,10 @@ T^{(\alpha)}\). Como \(\alpha<\ell(b)\), então
 existência de \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se
 \(\gamma>\alpha\), então existe \(p\in \{\zeta\in T\,\colon\zeta<z\}\) tal que
 \(\{\zeta\in T\,\colon\zeta<p\}\) é isomorfo à
-\(\alpha\), observe que isso é possível pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
-\(\alpha\) são bem ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além
-do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
-\(p\in b\) e \(h(p)=\alpha\).
+\(\alpha\), observe que isso é verdade pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
+\(\alpha\) são bem ordenados. Como \(p<z\in b\), temos que \(p\in b\). Além
+do mais, \(h(p)=\alpha\) nos diz que \(p\in b\cap T_\alpha\) e teremos finalmente \(\card{b\cap T_\alpha}=1\) . Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
+\(p\in b\) e \(h(p)=\alpha\), tendo assim que \(\card{b\cap T_\alpha}=1\).
 
 
 \par 
@@ -281,8 +281,7 @@ do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
 %Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
 %Segue que \(\card{b \cap T_\alpha} = 1\).
 
-Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer que
-\(\alpha<\ell(b)\), e então \(\alpha\geq\ell(b)\), donde concluímos que \(h(T)\geq\ell(b)\).
+Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pela definição de \(h(T)\), assim \(\ell(b)\leq h(T)\).
 
 % O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
 % verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
@@ -422,7 +421,7 @@ Se \(\alpha\geq h(T)\), então \(T_\alpha=\varnothing\). Logo não pode valer qu
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
 \begin{proof}
-  Em primeiro lugar, observamos que se  \(T\) é uma árvore, então cada nó de \(T\) possui
+  Em primeiro lugar, observamos que se  \(T\) é uma árvore de altura \(\omega\), então cada nó de \(T\) possui
   um número finito de sucessores imediatos se, e somente se todos os níveis de
   \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
   árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
@@ -789,14 +788,10 @@ Assim encerra-se a Seção 3 sobre árvores.
       foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
       do primeiro item do Exercício 3.3.
       \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
-        itens (iii) e (iv) do Exercício 3.2. Em contrapartida, decidimos não
-        escrever uma prova para o fato utilizado no início do Lema do Konig.
-        Isso porque acreditamos que a prova é trivial e iria desviar o olhar do
-        leitor da ideia principal, que queremos enfatizar.
+        itens (iii) e (iv) do Exercício 3.2.
       \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
         eliminar as referências ao livro. Acreditamos que não é conveniente que
-        o leitor das notas de aula, que são essencialmente uma tradução do
-        livro, precise também do livro original para entender o material.
+        o leitor precise do livro original para entender o material.
       \item Também adotamos o comando ``setminus'' para denotar exclusão de
         conjuntos para que fique coerente com a notação utilizada nas notas de aula.
   \end{itemize}
