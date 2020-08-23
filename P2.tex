@@ -117,8 +117,8 @@ definições que apresentamos:
     uma ordem, segue que \(r_1=r_2\). Para \(r\in T\) raiz, temos \(h(r)=0\) e portanto
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
     
-  \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
-    \(\alpha=h(x)=\beta\).
+  \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos por
+    definição que \(\alpha=h(x)=\beta\).
 
   \item Para a primeira igualdade, note que \(T^{(h(T))}\subseteq T\) uma vez
     que \(T^{(h(T))}\) é definido como uma união de subconjuntos de \(T\). Por
@@ -232,12 +232,7 @@ Logo existe \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
 =1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
 
-Por fim, faremos o caso \(\alpha<\ell(b)\) utilizando indução%\footnote{Para formalizar
-%  melhor, aqui nos faltou alguma
-%técnica que nos possibilitasse usar recursão quando \(\alpha\) é ordinal limite.
-%Em todas nossas outras demonstrações, buscamos usar técnicas que contornassem
-%esse problema}.
-
+Por fim, faremos o caso \(\alpha<\ell(b)\) utilizando indução
 Como a raiz de \(T\) é unica e pertence a todos os ramos de \(T\), o resultado é
 verdadeiro quando \(\alpha = 0\). Seja \(\alpha < \ell(b)\)  e suponha que
 \(\card{b \cap T_\beta} = 1\) para cada \(\beta < \alpha\).
@@ -255,54 +250,16 @@ T^{(\alpha)}\). Como \(\alpha<\ell(b)\), então
 existência de \(z\in b\cap T_\gamma\) para algum \(\gamma\geq\alpha\). Se
 \(\gamma>\alpha\), então existe \(p\in \{\zeta\in T\,\colon\zeta<z\}\) tal que
 \(\{\zeta\in T\,\colon\zeta<p\}\) é isomorfo à
-<<<<<<< HEAD
-\(\alpha\), observe que isso é possível pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
-\(\alpha\) são bem ordenados. Portanto \(p<z\in b\) implica que \(p\in b\). Além
-do mais, \(h(p)=\alpha\). Se \(\gamma=\alpha\), tome \(p= z\) e teremos que
-\(p\in b\) e \(h(p)=\alpha\).
-=======
-\(\alpha\), observe que isso é verdade pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
+\(\alpha\). Observe que isso é verdade pois \(\{\zeta\in T\,\colon\zeta<z\}\) e
 \(\alpha\) são bem ordenados. Como \(p<z\in b\), temos que \(p\in b\). Além
 do mais, \(h(p)=\alpha\) nos diz que \(p\in b\cap T_\alpha\) e teremos finalmente \(\card{b\cap T_\alpha}=1\) . Se \(\gamma=\alpha\), tome \(p\doteq z\) e teremos que
 \(p\in b\) e \(h(p)=\alpha\), tendo assim que \(\card{b\cap T_\alpha}=1\).
->>>>>>> a84d20c31bba3c630204079dff1ab3d01cee7638
+
 
 
 \par 
-%\textit{Caso 1}
-%Quando \(\alpha\) é limite.
-%Da identidade \(b = \bigcup_{y \in b} \succc{y}\) e pelo fato de estarem
-%encaixados,\(\ell(b) = \sup_{y \in b}h(y)\), donde existe \(y \in b\) com \(\alpha < h(y)\).
-%Mas \(\succc{y} \subset b\). Como vale a identidade \(b = \bigcup_{y \in b}
-%\succc{y}\) e esses conjuntos são
-%encaixados e cada um é bem ordenado, segue que que os antecessores de \(y\) com
-%nível \(h(y) > \alpha\) tem intersecção não vazia com \(T_\alpha\). 
-%\par 
-%\textit{Caso 2}
-%Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\).
-%Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\}
-%\subset b\). Mas \(\ell(b) > \alpha >\gamma\), donde existe \(x \in b, x > y\).
-%Pelo item (v) do  Exercício 3.1, existe um único \(z \in T\) tal que \(y < z
-%\leq x\) e \(z\) é sucessor imediato de \(y\).
-%Como \(b\) é maximal, segue que \(z \in b\).
-%Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\).
-%Segue que \(\card{b \cap T_\alpha} = 1\).
 
 Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pela definição de \(h(T)\), assim \(\ell(b)\leq h(T)\).
-
-% O caso \(\alpha<\ell(b)\) será feito por indução. Claramente quando \(\alpha = 0\) é
-% verdade. Seja \(\alpha < \ell(b)\) fixado e \(\card{b \cap T_\beta} = 1\), para
-% \(\beta < \alpha\).
-% \textbf{Caso \(\alpha\) é ordinal sucessor:}
-% Digamos \(\alpha = \gamma+1\) e portanto, \(\card{b \cap T_\gamma} = 1\). Tome
-% \(y \in b \cap T_\gamma\), de modo que \(\{t \in T\,\colon t \leq y\} \subset
-% b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo
-% item (iv) do Exercício 3.1, existe um único \(z \in T\) tal que \(y < z \leq x\)
-% e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z
-% \in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b
-% \cap T_\alpha\). Segue que \(\card{b \cap T_\alpha = 1}\).\\
-
-% \textcolor{red}{Falta o quando \(\alpha\) é ordinal limite.}
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
@@ -421,7 +378,7 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
   existem árvores de altura \(\omega\) que possuem apenas ramos finitos. O
   próximo teorema mostra que,  pensando na largura de uma árvore como um
   majorante para a cardinalidade de seus níveis, se uma aŕvore \(T\) de altura
-  enumerável é suficientemente "esguia", então \(T\) possui um ramo cofinal.
+  enumerável é suficientemente ``esguia'', então \(T\) possui um ramo cofinal.
 
   \begin{teo}[Lema de König]
   Seja \((T,\leq)\) uma árvore de altura \(\omega\). Se todos os níveis de \(T\) são finitos, então
@@ -576,7 +533,6 @@ Se \(\ell(b)> h(T)\), então \(T_{h(T)}\neq\varnothing\), mas isso é absurdo pe
    Defina \(F_0= C\). Indutivamente suponhamos \(F_\alpha\) bem definido
    para \(\alpha<\lambda\) de modo que \mbox{\(\sup\{\ell(b)\,\colon b\in
    F_\alpha\}=\kappa\).} (Como visto no item (iv) do Exercício \ref{3.2}).
-   %falta definir ell(b)
    Como todo nó possui uma quantidade  finita de sucessores imediatos, temos que
     existe \(a_\lambda\in T_\lambda\) de modo que quando definimos
    \[F_\lambda=\{(x_\beta)\in C\,\colon
@@ -788,19 +744,4 @@ Vamos demonstrar diretamente para \(\kappa\) cardinal singular.
 Assim encerra-se a Seção 3 sobre árvores.
   \bibliographystyle{plain}
   \bibliography{ref}
-  \textcolor{red}{Comentários sobre a correção:}
-  \begin{itemize}
-    \item Algumas correções, como por exemplo erros ortográficos e typos foram
-      corrigidos a menos da palavra `anticadeia', que foi erroneamente
-      corrigida. Além disso, encontramos outros erros do mesmo tipo que não
-      foram apontados pelos outros grupos como por exemplo \(T_{\alpha_n}\) na segunda linha
-      do primeiro item do Exercício \ref{3.3}.
-      \item Adotamos as soluções sugeridas pelo grupo do Heitor (Suslin) para os
-        itens (iii) e (iv) do Exercício \ref{3.2}.
-      \item Também adotamos a sugestão, também feita pelo grupo de Heitor, de
-        eliminar as referências ao livro. Acreditamos que não é conveniente que
-        o leitor precise do livro original para entender o material.
-      \item Também adotamos o comando ``setminus'' para denotar exclusão de
-        conjuntos para que fique coerente com a notação utilizada nas notas de aula.
-  \end{itemize}
 \end{document}
